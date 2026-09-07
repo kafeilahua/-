@@ -1,0 +1,10 @@
+.git
+.venv
+**/node_modules
+frontend/dist
+**/__pycache__
+*.pdf
+data/*.db*
+data/ocr-result.json
+data/translation-cache.json
+data/hotspot-candidates.json

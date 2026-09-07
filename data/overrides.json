@@ -1,0 +1,3264 @@
+{
+  "t1-q1": {
+    "zh": "你正在使用 Microsoft 365 Defender 调查一个事件。需要创建高级搜寻查询，统计 CFOLaptop、CEOLaptop 和 COOLaptop 三台设备的身份验证登录失败次数。\n请根据题图完成查询。每个正确选择计 1 分。",
+    "translation_status": "reviewed",
+    "type": "matching",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "| project LogonFailures=count()",
+            "zh": "| project LogonFailures=count()"
+          },
+          {
+            "id": "2",
+            "en": "| summarize LogonFailures=count() by DeviceName, LogonType",
+            "zh": "| summarize LogonFailures=count() by DeviceName, LogonType"
+          },
+          {
+            "id": "3",
+            "en": "| where ActionType == FailureReason",
+            "zh": "| where ActionType == FailureReason"
+          },
+          {
+            "id": "4",
+            "en": "| where DeviceName in (\"CFOLaptop\", \"CEOLaptop\", \"COOLaptop\")",
+            "zh": "| where DeviceName in (\"CFOLaptop\", \"CEOLaptop\", \"COOLaptop\")"
+          },
+          {
+            "id": "5",
+            "en": "ActionType == \"LogonFailed\"",
+            "zh": "ActionType == \"LogonFailed\""
+          },
+          {
+            "id": "6",
+            "en": "ActionType == FailureReason",
+            "zh": "ActionType == FailureReason"
+          },
+          {
+            "id": "7",
+            "en": "DeviceEvents",
+            "zh": "DeviceEvents"
+          },
+          {
+            "id": "8",
+            "en": "DeviceLogonEvents",
+            "zh": "DeviceLogonEvents"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "| project LogonFailures=count()",
+            "zh": "| project LogonFailures=count()"
+          },
+          {
+            "id": "2",
+            "en": "| summarize LogonFailures=count() by DeviceName, LogonType",
+            "zh": "| summarize LogonFailures=count() by DeviceName, LogonType"
+          },
+          {
+            "id": "3",
+            "en": "| where ActionType == FailureReason",
+            "zh": "| where ActionType == FailureReason"
+          },
+          {
+            "id": "4",
+            "en": "| where DeviceName in (\"CFOLaptop\", \"CEOLaptop\", \"COOLaptop\")",
+            "zh": "| where DeviceName in (\"CFOLaptop\", \"CEOLaptop\", \"COOLaptop\")"
+          },
+          {
+            "id": "5",
+            "en": "ActionType == \"LogonFailed\"",
+            "zh": "ActionType == \"LogonFailed\""
+          },
+          {
+            "id": "6",
+            "en": "ActionType == FailureReason",
+            "zh": "ActionType == FailureReason"
+          },
+          {
+            "id": "7",
+            "en": "DeviceEvents",
+            "zh": "DeviceEvents"
+          },
+          {
+            "id": "8",
+            "en": "DeviceLogonEvents",
+            "zh": "DeviceLogonEvents"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Answer area 3",
+        "zh": "第 3 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "| project LogonFailures=count()",
+            "zh": "| project LogonFailures=count()"
+          },
+          {
+            "id": "2",
+            "en": "| summarize LogonFailures=count() by DeviceName, LogonType",
+            "zh": "| summarize LogonFailures=count() by DeviceName, LogonType"
+          },
+          {
+            "id": "3",
+            "en": "| where ActionType == FailureReason",
+            "zh": "| where ActionType == FailureReason"
+          },
+          {
+            "id": "4",
+            "en": "| where DeviceName in (\"CFOLaptop\", \"CEOLaptop\", \"COOLaptop\")",
+            "zh": "| where DeviceName in (\"CFOLaptop\", \"CEOLaptop\", \"COOLaptop\")"
+          },
+          {
+            "id": "5",
+            "en": "ActionType == \"LogonFailed\"",
+            "zh": "ActionType == \"LogonFailed\""
+          },
+          {
+            "id": "6",
+            "en": "ActionType == FailureReason",
+            "zh": "ActionType == FailureReason"
+          },
+          {
+            "id": "7",
+            "en": "DeviceEvents",
+            "zh": "DeviceEvents"
+          },
+          {
+            "id": "8",
+            "en": "DeviceLogonEvents",
+            "zh": "DeviceLogonEvents"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "en": "Answer area 4",
+        "zh": "第 4 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "| project LogonFailures=count()",
+            "zh": "| project LogonFailures=count()"
+          },
+          {
+            "id": "2",
+            "en": "| summarize LogonFailures=count() by DeviceName, LogonType",
+            "zh": "| summarize LogonFailures=count() by DeviceName, LogonType"
+          },
+          {
+            "id": "3",
+            "en": "| where ActionType == FailureReason",
+            "zh": "| where ActionType == FailureReason"
+          },
+          {
+            "id": "4",
+            "en": "| where DeviceName in (\"CFOLaptop\", \"CEOLaptop\", \"COOLaptop\")",
+            "zh": "| where DeviceName in (\"CFOLaptop\", \"CEOLaptop\", \"COOLaptop\")"
+          },
+          {
+            "id": "5",
+            "en": "ActionType == \"LogonFailed\"",
+            "zh": "ActionType == \"LogonFailed\""
+          },
+          {
+            "id": "6",
+            "en": "ActionType == FailureReason",
+            "zh": "ActionType == FailureReason"
+          },
+          {
+            "id": "7",
+            "en": "DeviceEvents",
+            "zh": "DeviceEvents"
+          },
+          {
+            "id": "8",
+            "en": "DeviceLogonEvents",
+            "zh": "DeviceLogonEvents"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "8",
+      "4",
+      "6",
+      "2"
+    ],
+    "status": "review",
+    "issues": [
+      "原文查询引用 FailureReason，未定义该字段；答案需核对"
+    ],
+    "structure_status": "reviewed"
+  },
+  "t1-q2": {
+    "zh": "当用户尝试从组织内其他用户从未用于登录的位置登录时，你需要收到安全告警。应该使用哪种异常检测策略？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "不可能的旅行（Impossible travel）",
+      "B": "来自匿名 IP 地址的活动",
+      "C": "来自不常见国家或地区的活动",
+      "D": "恶意软件检测"
+    }
+  },
+  "t1-q3": {
+    "zh": "你有一个使用 Microsoft Defender for Office 365 的 Microsoft 365 订阅。Microsoft SharePoint Online 站点中存有敏感文档，其中客户账号由 32 个字母数字字符组成。\n你需要创建数据丢失防护（DLP）策略保护这些文档。应该使用什么来检测敏感文档？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "SharePoint 搜索",
+      "B": "Microsoft 365 Defender 中的搜寻查询",
+      "C": "Azure Information Protection",
+      "D": "正则表达式（RegEx）模式匹配"
+    }
+  },
+  "t1-q4": {
+    "zh": "公司使用的业务应用包含 Microsoft Office VBA 宏。你需要阻止用户通过这些宏，以额外子进程的形式下载和运行附加载荷。\n可以运行哪两个命令实现目标？每个正确答案都是完整的解决方案，每个正确选择计 1 分。",
+    "translation_status": "reviewed"
+  },
+  "t1-q5": {
+    "zh": "公司使用 Microsoft Defender for Endpoint。财务团队经常在设备上使用包含宏的 Microsoft Word 文档。\n你需要在维持现有安全防护水平的前提下，隐藏告警队列中的误报告警。应该执行哪三个操作？每个正确答案都是解决方案的一部分。",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "自动解决告警",
+      "B": "隐藏告警",
+      "C": "创建作用于任意设备的抑制规则",
+      "D": "创建作用于设备组的抑制规则",
+      "E": "生成告警"
+    }
+  },
+  "t1-q6": {
+    "zh": "你打开了题图所示的 Cloud App Security 门户。环境中没有启用 Microsoft Defender for Endpoint。\n你需要消除 Launchpad 应用带来的风险。应依次执行哪四个操作？请按正确顺序选择操作。",
+    "translation_status": "reviewed",
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Tag the app as Unsanctioned.",
+            "zh": "将应用标记为未经批准（Unsanctioned）"
+          },
+          {
+            "id": "2",
+            "en": "Run the script on the source appliance.",
+            "zh": "在源设备上运行脚本"
+          },
+          {
+            "id": "3",
+            "en": "Run the script in Azure Cloud Shell.",
+            "zh": "在 Azure Cloud Shell 中运行脚本"
+          },
+          {
+            "id": "4",
+            "en": "Select the app.",
+            "zh": "选择应用"
+          },
+          {
+            "id": "5",
+            "en": "Tag the app as Sanctioned.",
+            "zh": "将应用标记为已批准（Sanctioned）"
+          },
+          {
+            "id": "6",
+            "en": "Generate a block script.",
+            "zh": "生成阻止脚本"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Tag the app as Unsanctioned.",
+            "zh": "将应用标记为未经批准（Unsanctioned）"
+          },
+          {
+            "id": "2",
+            "en": "Run the script on the source appliance.",
+            "zh": "在源设备上运行脚本"
+          },
+          {
+            "id": "3",
+            "en": "Run the script in Azure Cloud Shell.",
+            "zh": "在 Azure Cloud Shell 中运行脚本"
+          },
+          {
+            "id": "4",
+            "en": "Select the app.",
+            "zh": "选择应用"
+          },
+          {
+            "id": "5",
+            "en": "Tag the app as Sanctioned.",
+            "zh": "将应用标记为已批准（Sanctioned）"
+          },
+          {
+            "id": "6",
+            "en": "Generate a block script.",
+            "zh": "生成阻止脚本"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Answer area 3",
+        "zh": "第 3 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Tag the app as Unsanctioned.",
+            "zh": "将应用标记为未经批准（Unsanctioned）"
+          },
+          {
+            "id": "2",
+            "en": "Run the script on the source appliance.",
+            "zh": "在源设备上运行脚本"
+          },
+          {
+            "id": "3",
+            "en": "Run the script in Azure Cloud Shell.",
+            "zh": "在 Azure Cloud Shell 中运行脚本"
+          },
+          {
+            "id": "4",
+            "en": "Select the app.",
+            "zh": "选择应用"
+          },
+          {
+            "id": "5",
+            "en": "Tag the app as Sanctioned.",
+            "zh": "将应用标记为已批准（Sanctioned）"
+          },
+          {
+            "id": "6",
+            "en": "Generate a block script.",
+            "zh": "生成阻止脚本"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "en": "Answer area 4",
+        "zh": "第 4 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Tag the app as Unsanctioned.",
+            "zh": "将应用标记为未经批准（Unsanctioned）"
+          },
+          {
+            "id": "2",
+            "en": "Run the script on the source appliance.",
+            "zh": "在源设备上运行脚本"
+          },
+          {
+            "id": "3",
+            "en": "Run the script in Azure Cloud Shell.",
+            "zh": "在 Azure Cloud Shell 中运行脚本"
+          },
+          {
+            "id": "4",
+            "en": "Select the app.",
+            "zh": "选择应用"
+          },
+          {
+            "id": "5",
+            "en": "Tag the app as Sanctioned.",
+            "zh": "将应用标记为已批准（Sanctioned）"
+          },
+          {
+            "id": "6",
+            "en": "Generate a block script.",
+            "zh": "生成阻止脚本"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "4",
+      "1",
+      "6",
+      "2"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t1-q7": {
+    "zh": "你有一个 Microsoft 365 E5 订阅，计划使用 Microsoft 365 Defender 开展跨域调查。\n你需要创建高级搜寻查询，识别受到恶意邮件附件影响的设备。请根据题图完成查询，每个正确选择计 1 分。",
+    "translation_status": "reviewed",
+    "type": "hotspot",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "extend",
+            "zh": "extend"
+          },
+          {
+            "id": "2",
+            "en": "join",
+            "zh": "join"
+          },
+          {
+            "id": "3",
+            "en": "project",
+            "zh": "project"
+          },
+          {
+            "id": "4",
+            "en": "union",
+            "zh": "union"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "extend",
+            "zh": "extend"
+          },
+          {
+            "id": "2",
+            "en": "join",
+            "zh": "join"
+          },
+          {
+            "id": "3",
+            "en": "project",
+            "zh": "project"
+          },
+          {
+            "id": "4",
+            "en": "union",
+            "zh": "union"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Answer area 3",
+        "zh": "第 3 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "extend",
+            "zh": "extend"
+          },
+          {
+            "id": "2",
+            "en": "join",
+            "zh": "join"
+          },
+          {
+            "id": "3",
+            "en": "project",
+            "zh": "project"
+          },
+          {
+            "id": "4",
+            "en": "union",
+            "zh": "union"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "3",
+      "3"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t1-q8": {
+    "zh": "你有题图所示的 Microsoft 365 Defender 高级搜寻查询。\n当过去 24 小时内任意进程在 Microsoft Defender 管理的设备上禁用系统还原时，你需要收到告警。应该执行哪两个操作？每个正确答案都是解决方案的一部分。",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "创建检测规则",
+      "B": "创建抑制规则",
+      "C": "在查询中添加 | order by Timestamp",
+      "D": "将 DeviceProcessEvents 替换为 DeviceNetworkEvents",
+      "E": "在查询输出中添加 DeviceId 和 ReportId"
+    }
+  },
+  "t1-q9": {
+    "zh": "你正在调查一起可能部署新型勒索软件的攻击。现有三个自定义设备组，其中的设备存储了高度敏感信息。\n你计划对所有相关设备执行自动化操作，需要临时将这些设备分组。应该执行哪三个操作？每个正确答案都是解决方案的一部分。",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "给设备组分配标签",
+      "B": "将设备用户添加到管理员角色",
+      "C": "给设备添加标签",
+      "D": "创建排名为 1 的新设备组",
+      "E": "创建新的管理员角色",
+      "F": "创建排名为 4 的新设备组"
+    }
+  },
+  "t1-q10": {
+    "zh": "本题属于同场景解决方案判断题。每道题给出不同方案，可能有多个方案满足目标，也可能均不满足。原考试此类题作答后不能返回，也不会出现在复查界面。\n\n你正在配置 Microsoft Defender for Identity 与 Active Directory 的集成。需要在 Microsoft Defender for Identity 门户中配置几个供攻击者利用的诱饵账号。\n解决方案：在 Entity tags 中将这些账号添加为 Honeytoken accounts（蜜罐账号）。\n该方案是否满足目标？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "是",
+      "B": "否"
+    }
+  },
+  "t1-q11": {
+    "zh": "本题属于同场景解决方案判断题。每道题给出不同方案，可能有多个方案满足目标，也可能均不满足。原考试此类题作答后不能返回，也不会出现在复查界面。\n\n你正在配置 Microsoft Defender for Identity 与 Active Directory 的集成。需要在 Microsoft Defender for Identity 门户中配置几个供攻击者利用的诱饵账号。\n解决方案：在 Azure AD Identity Protection 中配置登录风险策略。\n该方案是否满足目标？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "是",
+      "B": "否"
+    }
+  },
+  "t1-q12": {
+    "zh": "本题属于同场景解决方案判断题。每道题给出不同方案，可能有多个方案满足目标，也可能均不满足。原考试此类题作答后不能返回，也不会出现在复查界面。\n\n你正在配置 Microsoft Defender for Identity 与 Active Directory 的集成。需要在 Microsoft Defender for Identity 门户中配置几个供攻击者利用的诱饵账号。\n解决方案：将账号加入 Active Directory 组，并将该组添加为 Sensitive group（敏感组）。\n该方案是否满足目标？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "是",
+      "B": "否"
+    }
+  },
+  "t1-q22": {
+    "zh": "本题属于同场景解决方案判断题。每道题给出不同方案，可能有多个方案满足目标，也可能均不满足。原考试此类题作答后不能返回，也不会出现在复查界面。\n\n你正在配置 Microsoft Defender for Identity 与 Active Directory 的集成。需要在 Microsoft Defender for Identity 门户中配置几个供攻击者利用的诱饵账号。\n解决方案：将每个账号添加为 Sensitive account（敏感账号）。\n该方案是否满足目标？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "是",
+      "B": "否"
+    }
+  },
+  "t1-q13": {
+    "zh": "你已在 Microsoft Defender for Office 365 中实施安全附件策略。用户反映，带附件邮件的接收时间比预期长。\n你需要在不降低安全性的前提下缩短投递时间；附件仍须接受恶意软件扫描，包含恶意软件的邮件必须被阻止。应该配置安全附件策略中的哪个选项？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "动态投递（Dynamic Delivery）",
+      "B": "替换（Replace）",
+      "C": "阻止并启用重定向",
+      "D": "监视并启用重定向"
+    }
+  },
+  "t1-q14": {
+    "zh": "用户收到的恶意邮件数量增加。你需要在 Microsoft 365 Defender 中创建高级搜寻查询，确认收件人账号是否已被入侵。\n查询必须返回收件人在收到已知恶意邮件后一小时内最近的 20 次登录。请根据题图完成查询，每个正确选择计 1 分。",
+    "translation_status": "reviewed"
+  },
+  "t1-q15": {
+    "zh": "你收到关于一种利用图像文件进行攻击的安全通告。需要在 Microsoft Defender for Endpoint 中创建入侵指标（IoC）来阻止攻击。应使用哪种指标类型？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "URL／域名指标，操作设为“仅告警”",
+      "B": "URL／域名指标，操作设为“告警并阻止”",
+      "C": "文件哈希指标，操作设为“告警并阻止”",
+      "D": "证书指标，操作设为“告警并阻止”"
+    }
+  },
+  "t1-q16": {
+    "zh": "公司部署了 Microsoft Defender for Identity、Microsoft Defender for Endpoint 和 Microsoft Defender for Office 365。\n需要让一名安全分析员使用 Microsoft 365 安全中心，并能批准或拒绝 Microsoft Defender for Endpoint 生成的待处理操作。遵循最小权限原则，应为分析员分配哪两个角色？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "Azure Active Directory 的合规数据管理员",
+      "B": "Microsoft Defender for Endpoint 的主动修复操作角色",
+      "C": "Azure Active Directory 的安全管理员",
+      "D": "Azure Active Directory 的安全读取者"
+    }
+  },
+  "t1-q17": {
+    "zh": "你有一个使用 Microsoft Defender 的 Microsoft 365 E5 订阅，以及一个使用 Azure Sentinel 的 Azure 订阅。\n你需要识别所有包含已知恶意发件人邮件中文件的设备，查询应基于 SHA256 哈希匹配。请根据题图完成查询，每个正确选择计 1 分。",
+    "translation_status": "reviewed"
+  },
+  "t1-q18": {
+    "zh": "你需要配置 Microsoft Cloud App Security，在机密文件被外部共享时生成告警并触发修复操作。\n应该在 Cloud App Security 门户中执行哪两个操作？每个正确答案都是解决方案的一部分。",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "在设置 → 信息保护 → Azure Information Protection 中，仅扫描本租户的分类标签和内容检查警告",
+      "B": "调查文件，并将 App 筛选为 Office 365",
+      "C": "调查文件，并选择“基于搜索创建新策略”",
+      "D": "在设置 → 信息保护 → Azure Information Protection 中，自动扫描新文件的分类标签和内容检查警告",
+      "E": "在设置 → 信息保护 → 文件中启用文件监视",
+      "F": "调查文件，并将文件类型筛选为 Document"
+    }
+  },
+  "t1-q19": {
+    "zh": "你购买了 Microsoft 365 订阅，计划配置 Microsoft Cloud App Security。\n需要基于模板创建自定义策略，检测源自僵尸网络的 Microsoft 365 应用连接。应该使用什么？请根据题图选择，每个正确选择计 1 分。",
+    "translation_status": "reviewed"
+  },
+  "t1-q20": {
+    "zh": "公司只有一个位于伊斯坦布尔的办公室，并拥有 Microsoft 365 订阅。公司计划通过条件访问策略实施多重身份验证（MFA）。\n你需要对所有远程办公用户强制执行 MFA。解决方案应包含什么？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "欺诈告警",
+      "B": "用户风险策略",
+      "C": "命名位置",
+      "D": "用户登录策略"
+    }
+  },
+  "t1-q21": {
+    "zh": "你正在配置 Microsoft Cloud App Security，已有一项基于公司美国办公室 IP 地址范围的自定义威胁检测策略。\n你收到大量关于“不可能的旅行”和危险 IP 地址登录的告警，其中 99% 都是来自公司办公室的合法登录。为了避免对已知位置的合法登录产生告警，应执行哪两个操作？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "配置自动数据扩充",
+      "B": "将这些 IP 地址添加到企业地址范围类别",
+      "C": "提高“不可能的旅行”异常检测策略的敏感度",
+      "D": "将 IP 地址添加到其他地址范围类别并添加标签",
+      "E": "创建排除这些 IP 地址的活动策略"
+    }
+  },
+  "t1-q23": {
+    "zh": "你的 Microsoft 365 租户使用 Exchange Online 和 Microsoft Defender for Office 365。\n应该使用什么来确定零时差自动清除（ZAP）是否从某用户邮箱中移走了一封邮件？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "Microsoft Defender for Office 365 的威胁防护状态报告",
+      "B": "Exchange 邮箱审核日志",
+      "C": "Microsoft Defender for Office 365 的安全附件文件类型报告",
+      "D": "Exchange 邮件流报告"
+    }
+  },
+  "t1-q24": {
+    "zh": "你的 Microsoft 365 订阅包含 1,000 台安装了 Microsoft Office 365 的 Windows 10 设备。\n你需要缓解以下威胁：Excel 宏从不受信任网站下载脚本；用户打开 Outlook 中的可执行附件；Outlook 规则与窗体漏洞利用。\n应该使用什么？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "Microsoft Defender Antivirus",
+      "B": "Microsoft Defender for Endpoint 的攻击面减少规则",
+      "C": "Windows Defender 防火墙",
+      "D": "Azure Defender 的自适应应用程序控制"
+    }
+  },
+  "t1-q25": {
+    "zh": "你有一个第三方安全信息和事件管理（SIEM）解决方案。需要确保该 SIEM 能针对 Azure Active Directory 登录事件近实时生成告警。\n应如何将事件路由到 SIEM？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "创建具有 Security Events 连接器的 Azure Sentinel 工作区",
+      "B": "配置 Azure AD 诊断设置，将日志流式传输到事件中心",
+      "C": "创建具有 Azure Active Directory 连接器的 Azure Sentinel 工作区",
+      "D": "配置 Azure AD 诊断设置，将日志存档到存储账号"
+    }
+  },
+  "t1-q26": {
+    "zh": "你的 Azure 订阅关联到一个 Azure Active Directory 租户，租户包含 User1 和 User2。你计划部署 Azure Defender。\n需要允许这两个用户在订阅级别执行题图表格中的任务，并遵循最小权限原则。应分别分配哪个角色？角色可以使用一次、多次或不使用。",
+    "translation_status": "reviewed",
+    "type": "matching",
+    "slots": [
+      {
+        "id": "1",
+        "en": "User1",
+        "zh": "User1",
+        "options": [
+          {
+            "id": "1",
+            "en": "Contributor",
+            "zh": "参与者"
+          },
+          {
+            "id": "2",
+            "en": "Owner",
+            "zh": "所有者"
+          },
+          {
+            "id": "3",
+            "en": "Security administrator",
+            "zh": "安全管理员"
+          },
+          {
+            "id": "4",
+            "en": "Security reader",
+            "zh": "安全读取者"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "User2",
+        "zh": "User2",
+        "options": [
+          {
+            "id": "1",
+            "en": "Contributor",
+            "zh": "参与者"
+          },
+          {
+            "id": "2",
+            "en": "Owner",
+            "zh": "所有者"
+          },
+          {
+            "id": "3",
+            "en": "Security administrator",
+            "zh": "安全管理员"
+          },
+          {
+            "id": "4",
+            "en": "Security reader",
+            "zh": "安全读取者"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "1"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t1-q27": {
+    "zh": "你的 Microsoft 365 E5 订阅包含 200 台已加入 Microsoft Defender for Endpoint 的 Windows 10 设备。\n需要让用户能直接从 Microsoft 365 Defender 门户，通过远程 shell 连接访问这些设备，并遵循最小权限原则。应在门户中执行哪些操作？请根据题图选择，每个正确选择计 1 分。",
+    "translation_status": "reviewed"
+  },
+  "t1-q28": {
+    "zh": "你的 Microsoft 365 订阅使用 Microsoft 365 Defender，包含用户 User1。你获知 User1 的账号已被入侵。\n需要查看 User1 登录过的设备上触发的告警。请根据题图完成查询，每个正确选择计 1 分。",
+    "translation_status": "reviewed"
+  },
+  "t1-q29": {
+    "zh": "你的 Microsoft 365 E5 订阅使用 SharePoint Online。你从订阅中删除了一些用户。\n如果这些用户在账号删除前的一个月内，从 SharePoint Online 站点下载了大量文档，你需要收到通知。应该使用什么？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "Microsoft Defender for Cloud Apps 的文件策略",
+      "B": "访问评审策略",
+      "C": "Microsoft Defender for Office 365 的告警策略",
+      "D": "内部风险策略"
+    }
+  },
+  "t1-q30": {
+    "zh": "你的 Microsoft 365 订阅已启用 Microsoft 365 Defender。你需要识别过去七天内对敏感度标签所作的全部更改。应该使用什么？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "Microsoft 365 Defender 门户的 Incidents 页面",
+      "B": "Microsoft 365 合规中心“数据丢失防护”中的告警设置",
+      "C": "Microsoft 365 合规中心的活动资源管理器（Activity explorer）",
+      "D": "Microsoft 365 Defender 门户“电子邮件与协作”中的 Explorer 设置"
+    }
+  },
+  "t1-q31": {
+    "zh": "你的 Microsoft 365 订阅使用 Microsoft 365 Defender。需要识别受某个事件影响的全部实体。应使用门户中的哪个选项卡？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "调查（Investigations）",
+      "B": "设备（Devices）",
+      "C": "证据和响应（Evidence and Response）",
+      "D": "告警（Alerts）"
+    }
+  },
+  "t1-q32": {
+    "zh": "你的 Microsoft 365 E5 订阅关联到一个混合 Azure AD 租户。需要识别过去 30 天内对 Domain Admins 组所作的全部更改。应该使用什么？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "Microsoft Defender for Identity 的敏感组修改报告",
+      "B": "Microsoft Defender for Cloud Apps 的身份安全态势评估",
+      "C": "Azure Active Directory Provisioning Analysis 工作簿",
+      "D": "内部风险管理的概览设置"
+    }
+  },
+  "t1-q33": {
+    "zh": "你的 Microsoft 365 订阅使用 Microsoft 365 Defender，且 DLP 策略已配置聚合告警。\n需要识别聚合告警中受影响的实体。应在 Microsoft 365 合规中心的 DLP 告警管理仪表板查看什么？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "告警的 Events 选项卡",
+      "B": "告警的 Sensitive Info Types 选项卡",
+      "C": "管理日志",
+      "D": "告警的 Details 选项卡"
+    }
+  },
+  "t1-q34": {
+    "zh": "你的 Microsoft 365 订阅使用 Microsoft 365 Defender。你计划创建搜寻查询，需要自定义一个被跟踪的查询来评估订阅的威胁状态。\n应从 Microsoft 365 Defender 门户的哪个页面创建查询？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "威胁分析（Threat analytics）",
+      "B": "高级搜寻（Advanced Hunting）",
+      "C": "资源管理器（Explorer）",
+      "D": "策略和规则（Policies & rules）"
+    }
+  },
+  "t1-q35": {
+    "zh": "你的 Microsoft 365 订阅使用 Microsoft Defender for Endpoint。需要为 171.23.34.32–171.23.34.63 范围内的所有 IP 地址添加威胁指标，并尽量减少管理工作。\n应在 Microsoft 365 Defender 门户中执行什么操作？",
+    "translation_status": "reviewed",
+    "options_zh": {
+      "A": "创建包含范围内各个 IP 地址的导入文件，然后导入",
+      "B": "创建包含 171.23.34.32/27 的导入文件，然后导入",
+      "C": "添加指标，将 IP 地址设为 171.23.34.32–171.23.34.63",
+      "D": "添加指标，将 IP 地址设为 171.23.34.32/27"
+    }
+  },
+  "t2-q3": {
+    "type": "hotspot",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "When an Azure Security Center Recommendation is created or triggered",
+            "zh": "创建或触发 Azure Security Center 建议时"
+          },
+          {
+            "id": "2",
+            "en": "When an Azure Security Center Alert is created or triggered",
+            "zh": "创建或触发 Azure Security Center 告警时"
+          },
+          {
+            "id": "3",
+            "en": "When a response to an Azure Security Center alert is triggered",
+            "zh": "触发 Azure Security Center 告警响应时"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Recommendations",
+            "zh": "建议"
+          },
+          {
+            "id": "2",
+            "en": "Workflow automation",
+            "zh": "工作流自动化"
+          },
+          {
+            "id": "3",
+            "en": "Security alerts",
+            "zh": "安全告警"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "3"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t1-q46": {
+    "zh": "你有题图所示的自定义检测规则和 KQL 查询。请判断以下陈述是否正确：正确选择“是”，否则选择“否”。每个正确选择计 1 分。",
+    "slots": [
+      {
+        "id": "1",
+        "en": "The custom detection rule can be used to automate the deletion of email messages from a user's mailbox based on the RecipientEmailAddress column.",
+        "zh": "该规则可以根据 RecipientEmailAddress 列，自动删除用户邮箱中的邮件。",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "The custom detection rule can be used to restrict app execution automatically based on the DeviceId column.",
+        "zh": "该规则可以根据 DeviceId 列，自动限制应用执行。",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "The custom detection rule can be used to automate the deletion of a file based on the sHA256 column.",
+        "zh": "该规则可以根据 SHA256 列，自动删除文件。",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "no",
+      "yes",
+      "yes"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed",
+    "translation_status": "reviewed"
+  },
+  "t2-q17": {
+    "zh": "你负责管理一个 Azure 订阅的安全态势，订阅包含 vm1 和 vm2 两台虚拟机。Azure Security Center 的安全分数和 Azure Policy 分配见题图。\n请判断以下陈述是否正确，每个正确选择计 1 分。",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Both virtual machines have inbound rules that allow access from either Any or Internet ranges.",
+        "zh": "两台虚拟机都有允许来自 Any 或 Internet 范围的入站访问规则。",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Both virtual machines have management ports exposed directly to the internet.",
+        "zh": "两台虚拟机的管理端口都直接暴露在互联网上。",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "If you enable just-in-time network access controls on all virtual machines, you will increase the secure score by four point.",
+        "zh": "如果为所有虚拟机启用即时网络访问控制，安全分数将增加 4 分。",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "yes",
+      "no",
+      "yes"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed",
+    "translation_status": "reviewed"
+  },
+  "t3-q54": {
+    "zh": "你有题图所示的 KQL 查询。请判断以下陈述是否正确：正确选择“是”，否则选择“否”。每个正确选择计 1 分。",
+    "slots": [
+      {
+        "id": "1",
+        "en": "The UserName field is set as theaccountentity",
+        "zh": "UserName 字段被设为账号实体。",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Thewatchlistcannotbeupdated afteritiscreated.",
+        "zh": "监视列表创建后不能更新。",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "The IPList variable is set as the IP address entity.",
+        "zh": "IPList 变量被设为 IP 地址实体。",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "yes",
+      "no",
+      "no"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed",
+    "translation_status": "reviewed"
+  },
+  "t4-q3": {
+    "zh": "你的 Microsoft Sentinel 工作区默认数据保留期为 30 天，包含题图所示的两个自定义表。过去 365 天中，每个表每天都摄取了两条记录。\n你编写了题图中的 KQL 语句用于分析规则。请判断以下陈述是否正确，每个正确选择计 1 分。",
+    "slots": [
+      {
+        "id": "1",
+        "en": "For Query1 to return a value of 30, you must change Table plan to Analytics.",
+        "zh": "要让 Query1 返回 30，必须将 Table plan 改为 Analytics。",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "For Query2 to return a value of 240, you must change Total retention period to 120 days.",
+        "zh": "要让 Query2 返回 240，必须将 Total retention period 改为 120 天。",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "For Query3 to return 90 rows, you must change Total retention period to 45 days.",
+        "zh": "要让 Query3 返回 90 行，必须将 Total retention period 改为 45 天。",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "no",
+      "no",
+      "yes"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed",
+    "translation_status": "reviewed"
+  },
+  "t1-q37": {
+    "type": "matching",
+    "slots": [
+      {
+        "id": "1",
+        "en": "在虚拟机上启用 Defender for Servers",
+        "zh": "在虚拟机上启用 Defender for Servers",
+        "options": [
+          {
+            "id": "1",
+            "en": "User1",
+            "zh": "User1"
+          },
+          {
+            "id": "2",
+            "en": "User2",
+            "zh": "User2"
+          },
+          {
+            "id": "3",
+            "en": "User3",
+            "zh": "User3"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "查看安全建议并启用服务器漏洞扫描",
+        "zh": "查看安全建议并启用服务器漏洞扫描",
+        "options": [
+          {
+            "id": "1",
+            "en": "User1",
+            "zh": "User1"
+          },
+          {
+            "id": "2",
+            "en": "User2",
+            "zh": "User2"
+          },
+          {
+            "id": "3",
+            "en": "User3",
+            "zh": "User3"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "1"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t1-q52": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "Provide domain administrator credentials to the litware.com Active Directory domain.",
+            "zh": "提供 litware.com Active Directory 域的域管理员凭据"
+          },
+          {
+            "id": "2",
+            "en": "Create an instance of Microsoft Defender for Identity.",
+            "zh": "创建 Microsoft Defender for Identity 实例"
+          },
+          {
+            "id": "3",
+            "en": "Provide global administrator credentials to the litware.com Azure AD tenant.",
+            "zh": "提供 litware.com Azure AD 租户的全局管理员凭据"
+          },
+          {
+            "id": "4",
+            "en": "Install the sensor on DC1.",
+            "zh": "在 DC1 上安装传感器"
+          },
+          {
+            "id": "5",
+            "en": "Install the standalone sensor on DC1.",
+            "zh": "在 DC1 上安装独立传感器"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "Provide domain administrator credentials to the litware.com Active Directory domain.",
+            "zh": "提供 litware.com Active Directory 域的域管理员凭据"
+          },
+          {
+            "id": "2",
+            "en": "Create an instance of Microsoft Defender for Identity.",
+            "zh": "创建 Microsoft Defender for Identity 实例"
+          },
+          {
+            "id": "3",
+            "en": "Provide global administrator credentials to the litware.com Azure AD tenant.",
+            "zh": "提供 litware.com Azure AD 租户的全局管理员凭据"
+          },
+          {
+            "id": "4",
+            "en": "Install the sensor on DC1.",
+            "zh": "在 DC1 上安装传感器"
+          },
+          {
+            "id": "5",
+            "en": "Install the standalone sensor on DC1.",
+            "zh": "在 DC1 上安装独立传感器"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "Provide domain administrator credentials to the litware.com Active Directory domain.",
+            "zh": "提供 litware.com Active Directory 域的域管理员凭据"
+          },
+          {
+            "id": "2",
+            "en": "Create an instance of Microsoft Defender for Identity.",
+            "zh": "创建 Microsoft Defender for Identity 实例"
+          },
+          {
+            "id": "3",
+            "en": "Provide global administrator credentials to the litware.com Azure AD tenant.",
+            "zh": "提供 litware.com Azure AD 租户的全局管理员凭据"
+          },
+          {
+            "id": "4",
+            "en": "Install the sensor on DC1.",
+            "zh": "在 DC1 上安装传感器"
+          },
+          {
+            "id": "5",
+            "en": "Install the standalone sensor on DC1.",
+            "zh": "在 DC1 上安装独立传感器"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "2",
+      "4"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t9-q3": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "Provide domain administrator credentials to the litware.com Active Directory domain.",
+            "zh": "提供 litware.com Active Directory 域的域管理员凭据"
+          },
+          {
+            "id": "2",
+            "en": "Create an instance of Microsoft Defender for Identity.",
+            "zh": "创建 Microsoft Defender for Identity 实例"
+          },
+          {
+            "id": "3",
+            "en": "Provide global administrator credentials to the litware.com Azure AD tenant.",
+            "zh": "提供 litware.com Azure AD 租户的全局管理员凭据"
+          },
+          {
+            "id": "4",
+            "en": "Install the sensor on DC1.",
+            "zh": "在 DC1 上安装传感器"
+          },
+          {
+            "id": "5",
+            "en": "Install the standalone sensor on DC1.",
+            "zh": "在 DC1 上安装独立传感器"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "Provide domain administrator credentials to the litware.com Active Directory domain.",
+            "zh": "提供 litware.com Active Directory 域的域管理员凭据"
+          },
+          {
+            "id": "2",
+            "en": "Create an instance of Microsoft Defender for Identity.",
+            "zh": "创建 Microsoft Defender for Identity 实例"
+          },
+          {
+            "id": "3",
+            "en": "Provide global administrator credentials to the litware.com Azure AD tenant.",
+            "zh": "提供 litware.com Azure AD 租户的全局管理员凭据"
+          },
+          {
+            "id": "4",
+            "en": "Install the sensor on DC1.",
+            "zh": "在 DC1 上安装传感器"
+          },
+          {
+            "id": "5",
+            "en": "Install the standalone sensor on DC1.",
+            "zh": "在 DC1 上安装独立传感器"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "Provide domain administrator credentials to the litware.com Active Directory domain.",
+            "zh": "提供 litware.com Active Directory 域的域管理员凭据"
+          },
+          {
+            "id": "2",
+            "en": "Create an instance of Microsoft Defender for Identity.",
+            "zh": "创建 Microsoft Defender for Identity 实例"
+          },
+          {
+            "id": "3",
+            "en": "Provide global administrator credentials to the litware.com Azure AD tenant.",
+            "zh": "提供 litware.com Azure AD 租户的全局管理员凭据"
+          },
+          {
+            "id": "4",
+            "en": "Install the sensor on DC1.",
+            "zh": "在 DC1 上安装传感器"
+          },
+          {
+            "id": "5",
+            "en": "Install the standalone sensor on DC1.",
+            "zh": "在 DC1 上安装独立传感器"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "2",
+      "4"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t2-q7": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "Change the alert severity threshold for emails to Medium.",
+            "zh": "将邮件告警严重性阈值改为中"
+          },
+          {
+            "id": "2",
+            "en": "Copy an executable file on a virtual machine and rename the file as ASC_AlertTest_662jfi039N.exe.",
+            "zh": "在虚拟机上复制可执行文件并重命名为 ASC_AlertTest_662jfi039N.exe"
+          },
+          {
+            "id": "3",
+            "en": "Enable Azure Defender for the subscription.",
+            "zh": "为订阅启用 Azure Defender"
+          },
+          {
+            "id": "4",
+            "en": "Change the alert severity threshold for emails to Low.",
+            "zh": "将邮件告警严重性阈值改为低"
+          },
+          {
+            "id": "5",
+            "en": "Run the executable file and specify the appropriate arguments.",
+            "zh": "运行可执行文件并指定相应参数"
+          },
+          {
+            "id": "6",
+            "en": "Rename the executable file as AlertTest.exe.",
+            "zh": "将可执行文件重命名为 AlertTest.exe"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "Change the alert severity threshold for emails to Medium.",
+            "zh": "将邮件告警严重性阈值改为中"
+          },
+          {
+            "id": "2",
+            "en": "Copy an executable file on a virtual machine and rename the file as ASC_AlertTest_662jfi039N.exe.",
+            "zh": "在虚拟机上复制可执行文件并重命名为 ASC_AlertTest_662jfi039N.exe"
+          },
+          {
+            "id": "3",
+            "en": "Enable Azure Defender for the subscription.",
+            "zh": "为订阅启用 Azure Defender"
+          },
+          {
+            "id": "4",
+            "en": "Change the alert severity threshold for emails to Low.",
+            "zh": "将邮件告警严重性阈值改为低"
+          },
+          {
+            "id": "5",
+            "en": "Run the executable file and specify the appropriate arguments.",
+            "zh": "运行可执行文件并指定相应参数"
+          },
+          {
+            "id": "6",
+            "en": "Rename the executable file as AlertTest.exe.",
+            "zh": "将可执行文件重命名为 AlertTest.exe"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "Change the alert severity threshold for emails to Medium.",
+            "zh": "将邮件告警严重性阈值改为中"
+          },
+          {
+            "id": "2",
+            "en": "Copy an executable file on a virtual machine and rename the file as ASC_AlertTest_662jfi039N.exe.",
+            "zh": "在虚拟机上复制可执行文件并重命名为 ASC_AlertTest_662jfi039N.exe"
+          },
+          {
+            "id": "3",
+            "en": "Enable Azure Defender for the subscription.",
+            "zh": "为订阅启用 Azure Defender"
+          },
+          {
+            "id": "4",
+            "en": "Change the alert severity threshold for emails to Low.",
+            "zh": "将邮件告警严重性阈值改为低"
+          },
+          {
+            "id": "5",
+            "en": "Run the executable file and specify the appropriate arguments.",
+            "zh": "运行可执行文件并指定相应参数"
+          },
+          {
+            "id": "6",
+            "en": "Rename the executable file as AlertTest.exe.",
+            "zh": "将可执行文件重命名为 AlertTest.exe"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "2",
+      "5"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t2-q41": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "Rename the executable file as AlertTest.exe.",
+            "zh": "将可执行文件重命名为 AlertTest.exe"
+          },
+          {
+            "id": "2",
+            "en": "Copy an executable file on a virtual machine and rename the file as ASC_AlertTest_662jfi039N.exe.",
+            "zh": "在虚拟机上复制可执行文件并重命名为 ASC_AlertTest_662jfi039N.exe"
+          },
+          {
+            "id": "3",
+            "en": "Change the alert severity threshold for emails to Medium.",
+            "zh": "将邮件告警严重性阈值改为中"
+          },
+          {
+            "id": "4",
+            "en": "Run the executable file and specify the appropriate arguments.",
+            "zh": "运行可执行文件并指定相应参数"
+          },
+          {
+            "id": "5",
+            "en": "Change the alert severity threshold for emails to Low.",
+            "zh": "将邮件告警严重性阈值改为低"
+          },
+          {
+            "id": "6",
+            "en": "Enable Microsoft Defender for Cloud's enhanced security features for the subscription.",
+            "zh": "为订阅启用 Microsoft Defender for Cloud 的增强安全功能"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "Rename the executable file as AlertTest.exe.",
+            "zh": "将可执行文件重命名为 AlertTest.exe"
+          },
+          {
+            "id": "2",
+            "en": "Copy an executable file on a virtual machine and rename the file as ASC_AlertTest_662jfi039N.exe.",
+            "zh": "在虚拟机上复制可执行文件并重命名为 ASC_AlertTest_662jfi039N.exe"
+          },
+          {
+            "id": "3",
+            "en": "Change the alert severity threshold for emails to Medium.",
+            "zh": "将邮件告警严重性阈值改为中"
+          },
+          {
+            "id": "4",
+            "en": "Run the executable file and specify the appropriate arguments.",
+            "zh": "运行可执行文件并指定相应参数"
+          },
+          {
+            "id": "5",
+            "en": "Change the alert severity threshold for emails to Low.",
+            "zh": "将邮件告警严重性阈值改为低"
+          },
+          {
+            "id": "6",
+            "en": "Enable Microsoft Defender for Cloud's enhanced security features for the subscription.",
+            "zh": "为订阅启用 Microsoft Defender for Cloud 的增强安全功能"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "Rename the executable file as AlertTest.exe.",
+            "zh": "将可执行文件重命名为 AlertTest.exe"
+          },
+          {
+            "id": "2",
+            "en": "Copy an executable file on a virtual machine and rename the file as ASC_AlertTest_662jfi039N.exe.",
+            "zh": "在虚拟机上复制可执行文件并重命名为 ASC_AlertTest_662jfi039N.exe"
+          },
+          {
+            "id": "3",
+            "en": "Change the alert severity threshold for emails to Medium.",
+            "zh": "将邮件告警严重性阈值改为中"
+          },
+          {
+            "id": "4",
+            "en": "Run the executable file and specify the appropriate arguments.",
+            "zh": "运行可执行文件并指定相应参数"
+          },
+          {
+            "id": "5",
+            "en": "Change the alert severity threshold for emails to Low.",
+            "zh": "将邮件告警严重性阈值改为低"
+          },
+          {
+            "id": "6",
+            "en": "Enable Microsoft Defender for Cloud's enhanced security features for the subscription.",
+            "zh": "为订阅启用 Microsoft Defender for Cloud 的增强安全功能"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "6",
+      "2",
+      "4"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t2-q9": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "Enable Security Health Analytics.",
+            "zh": "启用 Security Health Analytics"
+          },
+          {
+            "id": "2",
+            "en": "From Azure Security Center, add cloud connectors.",
+            "zh": "从 Azure Security Center 添加云连接器"
+          },
+          {
+            "id": "3",
+            "en": "Configure the GCP Security Command Center.",
+            "zh": "配置 GCP Security Command Center"
+          },
+          {
+            "id": "4",
+            "en": "Create a dedicated service account and a private key.",
+            "zh": "创建专用服务账号和私钥"
+          },
+          {
+            "id": "5",
+            "en": "Enable the GCP Security Command Center API.",
+            "zh": "启用 GCP Security Command Center API"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "Enable Security Health Analytics.",
+            "zh": "启用 Security Health Analytics"
+          },
+          {
+            "id": "2",
+            "en": "From Azure Security Center, add cloud connectors.",
+            "zh": "从 Azure Security Center 添加云连接器"
+          },
+          {
+            "id": "3",
+            "en": "Configure the GCP Security Command Center.",
+            "zh": "配置 GCP Security Command Center"
+          },
+          {
+            "id": "4",
+            "en": "Create a dedicated service account and a private key.",
+            "zh": "创建专用服务账号和私钥"
+          },
+          {
+            "id": "5",
+            "en": "Enable the GCP Security Command Center API.",
+            "zh": "启用 GCP Security Command Center API"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "Enable Security Health Analytics.",
+            "zh": "启用 Security Health Analytics"
+          },
+          {
+            "id": "2",
+            "en": "From Azure Security Center, add cloud connectors.",
+            "zh": "从 Azure Security Center 添加云连接器"
+          },
+          {
+            "id": "3",
+            "en": "Configure the GCP Security Command Center.",
+            "zh": "配置 GCP Security Command Center"
+          },
+          {
+            "id": "4",
+            "en": "Create a dedicated service account and a private key.",
+            "zh": "创建专用服务账号和私钥"
+          },
+          {
+            "id": "5",
+            "en": "Enable the GCP Security Command Center API.",
+            "zh": "启用 GCP Security Command Center API"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "en": "Step 4",
+        "zh": "步骤 4",
+        "options": [
+          {
+            "id": "1",
+            "en": "Enable Security Health Analytics.",
+            "zh": "启用 Security Health Analytics"
+          },
+          {
+            "id": "2",
+            "en": "From Azure Security Center, add cloud connectors.",
+            "zh": "从 Azure Security Center 添加云连接器"
+          },
+          {
+            "id": "3",
+            "en": "Configure the GCP Security Command Center.",
+            "zh": "配置 GCP Security Command Center"
+          },
+          {
+            "id": "4",
+            "en": "Create a dedicated service account and a private key.",
+            "zh": "创建专用服务账号和私钥"
+          },
+          {
+            "id": "5",
+            "en": "Enable the GCP Security Command Center API.",
+            "zh": "启用 GCP Security Command Center API"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "en": "Step 5",
+        "zh": "步骤 5",
+        "options": [
+          {
+            "id": "1",
+            "en": "Enable Security Health Analytics.",
+            "zh": "启用 Security Health Analytics"
+          },
+          {
+            "id": "2",
+            "en": "From Azure Security Center, add cloud connectors.",
+            "zh": "从 Azure Security Center 添加云连接器"
+          },
+          {
+            "id": "3",
+            "en": "Configure the GCP Security Command Center.",
+            "zh": "配置 GCP Security Command Center"
+          },
+          {
+            "id": "4",
+            "en": "Create a dedicated service account and a private key.",
+            "zh": "创建专用服务账号和私钥"
+          },
+          {
+            "id": "5",
+            "en": "Enable the GCP Security Command Center API.",
+            "zh": "启用 GCP Security Command Center API"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "1",
+      "5",
+      "4",
+      "2"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t2-q18": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "From Device Inventory, search for the CVE.",
+            "zh": "从设备清单搜索 CVE"
+          },
+          {
+            "id": "2",
+            "en": "Open the Threat Protection report.",
+            "zh": "打开威胁防护报告"
+          },
+          {
+            "id": "3",
+            "en": "From Threat & Vulnerability Management, select Weaknesses, and search for the CVE.",
+            "zh": "在威胁与漏洞管理中选择 Weaknesses 并搜索 CVE"
+          },
+          {
+            "id": "4",
+            "en": "From Advanced hunting, search for CveId in the DeviceTvmSoftwareInventoryVulnerabilities table.",
+            "zh": "在高级搜寻中，从 DeviceTvmSoftwareInventoryVulnerabilities 表搜索 CveId"
+          },
+          {
+            "id": "5",
+            "en": "Create the remediation request.",
+            "zh": "创建修复请求"
+          },
+          {
+            "id": "6",
+            "en": "Select Security recommendations.",
+            "zh": "选择安全建议"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "From Device Inventory, search for the CVE.",
+            "zh": "从设备清单搜索 CVE"
+          },
+          {
+            "id": "2",
+            "en": "Open the Threat Protection report.",
+            "zh": "打开威胁防护报告"
+          },
+          {
+            "id": "3",
+            "en": "From Threat & Vulnerability Management, select Weaknesses, and search for the CVE.",
+            "zh": "在威胁与漏洞管理中选择 Weaknesses 并搜索 CVE"
+          },
+          {
+            "id": "4",
+            "en": "From Advanced hunting, search for CveId in the DeviceTvmSoftwareInventoryVulnerabilities table.",
+            "zh": "在高级搜寻中，从 DeviceTvmSoftwareInventoryVulnerabilities 表搜索 CveId"
+          },
+          {
+            "id": "5",
+            "en": "Create the remediation request.",
+            "zh": "创建修复请求"
+          },
+          {
+            "id": "6",
+            "en": "Select Security recommendations.",
+            "zh": "选择安全建议"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "From Device Inventory, search for the CVE.",
+            "zh": "从设备清单搜索 CVE"
+          },
+          {
+            "id": "2",
+            "en": "Open the Threat Protection report.",
+            "zh": "打开威胁防护报告"
+          },
+          {
+            "id": "3",
+            "en": "From Threat & Vulnerability Management, select Weaknesses, and search for the CVE.",
+            "zh": "在威胁与漏洞管理中选择 Weaknesses 并搜索 CVE"
+          },
+          {
+            "id": "4",
+            "en": "From Advanced hunting, search for CveId in the DeviceTvmSoftwareInventoryVulnerabilities table.",
+            "zh": "在高级搜寻中，从 DeviceTvmSoftwareInventoryVulnerabilities 表搜索 CveId"
+          },
+          {
+            "id": "5",
+            "en": "Create the remediation request.",
+            "zh": "创建修复请求"
+          },
+          {
+            "id": "6",
+            "en": "Select Security recommendations.",
+            "zh": "选择安全建议"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "6",
+      "5"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t2-q25": {
+    "type": "matching",
+    "slots": [
+      {
+        "id": "1",
+        "en": "启用和禁用 Azure Defender",
+        "zh": "启用和禁用 Azure Defender",
+        "options": [
+          {
+            "id": "1",
+            "en": "Security Admin",
+            "zh": "安全管理员"
+          },
+          {
+            "id": "2",
+            "en": "Resource Group Owner",
+            "zh": "资源组所有者"
+          },
+          {
+            "id": "3",
+            "en": "Subscription Contributor",
+            "zh": "订阅参与者"
+          },
+          {
+            "id": "4",
+            "en": "Subscription Owner",
+            "zh": "订阅所有者"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "将安全建议应用到资源",
+        "zh": "将安全建议应用到资源",
+        "options": [
+          {
+            "id": "1",
+            "en": "Security Admin",
+            "zh": "安全管理员"
+          },
+          {
+            "id": "2",
+            "en": "Resource Group Owner",
+            "zh": "资源组所有者"
+          },
+          {
+            "id": "3",
+            "en": "Subscription Contributor",
+            "zh": "订阅参与者"
+          },
+          {
+            "id": "4",
+            "en": "Subscription Owner",
+            "zh": "订阅所有者"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "2"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t2-q32": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "Configure the Mitigate the threat settings.",
+            "zh": "配置缓解威胁设置"
+          },
+          {
+            "id": "2",
+            "en": "Configure the Suppress similar alerts settings.",
+            "zh": "配置抑制类似告警设置"
+          },
+          {
+            "id": "3",
+            "en": "Filter by alert title.",
+            "zh": "按告警标题筛选"
+          },
+          {
+            "id": "4",
+            "en": "Configure the Trigger automated response settings.",
+            "zh": "配置触发自动响应设置"
+          },
+          {
+            "id": "5",
+            "en": "Configure the Prevent future attacks settings.",
+            "zh": "配置防止未来攻击设置"
+          },
+          {
+            "id": "6",
+            "en": "Select Take action.",
+            "zh": "选择采取操作"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "Configure the Mitigate the threat settings.",
+            "zh": "配置缓解威胁设置"
+          },
+          {
+            "id": "2",
+            "en": "Configure the Suppress similar alerts settings.",
+            "zh": "配置抑制类似告警设置"
+          },
+          {
+            "id": "3",
+            "en": "Filter by alert title.",
+            "zh": "按告警标题筛选"
+          },
+          {
+            "id": "4",
+            "en": "Configure the Trigger automated response settings.",
+            "zh": "配置触发自动响应设置"
+          },
+          {
+            "id": "5",
+            "en": "Configure the Prevent future attacks settings.",
+            "zh": "配置防止未来攻击设置"
+          },
+          {
+            "id": "6",
+            "en": "Select Take action.",
+            "zh": "选择采取操作"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "Configure the Mitigate the threat settings.",
+            "zh": "配置缓解威胁设置"
+          },
+          {
+            "id": "2",
+            "en": "Configure the Suppress similar alerts settings.",
+            "zh": "配置抑制类似告警设置"
+          },
+          {
+            "id": "3",
+            "en": "Filter by alert title.",
+            "zh": "按告警标题筛选"
+          },
+          {
+            "id": "4",
+            "en": "Configure the Trigger automated response settings.",
+            "zh": "配置触发自动响应设置"
+          },
+          {
+            "id": "5",
+            "en": "Configure the Prevent future attacks settings.",
+            "zh": "配置防止未来攻击设置"
+          },
+          {
+            "id": "6",
+            "en": "Select Take action.",
+            "zh": "选择采取操作"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "6",
+      "4"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t2-q37": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "From the Add servers with Azure Arc settings in the Azure portal, generate an installation script.",
+            "zh": "在 Azure 门户中，通过“使用 Azure Arc 添加服务器”生成安装脚本"
+          },
+          {
+            "id": "2",
+            "en": "From the Data controller settings in the Azure portal, create an Azure Arc data controller.",
+            "zh": "在 Azure 门户的数据控制器设置中创建 Azure Arc 数据控制器"
+          },
+          {
+            "id": "3",
+            "en": "On the on-premises servers, install the Log Analytics agent.",
+            "zh": "在本地服务器上安装 Log Analytics 代理"
+          },
+          {
+            "id": "4",
+            "en": "On the on-premises servers, install the Azure Connected Machine agent.",
+            "zh": "在本地服务器上安装 Azure Connected Machine 代理"
+          },
+          {
+            "id": "5",
+            "en": "On the on-premises servers, install the Azure Monitor agent.",
+            "zh": "在本地服务器上安装 Azure Monitor 代理"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "From the Add servers with Azure Arc settings in the Azure portal, generate an installation script.",
+            "zh": "在 Azure 门户中，通过“使用 Azure Arc 添加服务器”生成安装脚本"
+          },
+          {
+            "id": "2",
+            "en": "From the Data controller settings in the Azure portal, create an Azure Arc data controller.",
+            "zh": "在 Azure 门户的数据控制器设置中创建 Azure Arc 数据控制器"
+          },
+          {
+            "id": "3",
+            "en": "On the on-premises servers, install the Log Analytics agent.",
+            "zh": "在本地服务器上安装 Log Analytics 代理"
+          },
+          {
+            "id": "4",
+            "en": "On the on-premises servers, install the Azure Connected Machine agent.",
+            "zh": "在本地服务器上安装 Azure Connected Machine 代理"
+          },
+          {
+            "id": "5",
+            "en": "On the on-premises servers, install the Azure Monitor agent.",
+            "zh": "在本地服务器上安装 Azure Monitor 代理"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "From the Add servers with Azure Arc settings in the Azure portal, generate an installation script.",
+            "zh": "在 Azure 门户中，通过“使用 Azure Arc 添加服务器”生成安装脚本"
+          },
+          {
+            "id": "2",
+            "en": "From the Data controller settings in the Azure portal, create an Azure Arc data controller.",
+            "zh": "在 Azure 门户的数据控制器设置中创建 Azure Arc 数据控制器"
+          },
+          {
+            "id": "3",
+            "en": "On the on-premises servers, install the Log Analytics agent.",
+            "zh": "在本地服务器上安装 Log Analytics 代理"
+          },
+          {
+            "id": "4",
+            "en": "On the on-premises servers, install the Azure Connected Machine agent.",
+            "zh": "在本地服务器上安装 Azure Connected Machine 代理"
+          },
+          {
+            "id": "5",
+            "en": "On the on-premises servers, install the Azure Monitor agent.",
+            "zh": "在本地服务器上安装 Azure Monitor 代理"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "4",
+      "5"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t2-q55": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "Create an Azure logic app that includes the Defender for Cloud regulatory compliance assessment trigger.",
+            "zh": "创建包含 Defender for Cloud 合规性评估触发器的逻辑应用"
+          },
+          {
+            "id": "2",
+            "en": "Configure workflow automation.",
+            "zh": "配置工作流自动化"
+          },
+          {
+            "id": "3",
+            "en": "Create an Azure logic app that includes the Defender for Cloud alert trigger.",
+            "zh": "创建包含 Defender for Cloud 告警触发器的逻辑应用"
+          },
+          {
+            "id": "4",
+            "en": "Create an Azure logic app that includes the Defender for Cloud recommendation trigger.",
+            "zh": "创建包含 Defender for Cloud 建议触发器的逻辑应用"
+          },
+          {
+            "id": "5",
+            "en": "Configure a trigger condition.",
+            "zh": "配置触发条件"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "Create an Azure logic app that includes the Defender for Cloud regulatory compliance assessment trigger.",
+            "zh": "创建包含 Defender for Cloud 合规性评估触发器的逻辑应用"
+          },
+          {
+            "id": "2",
+            "en": "Configure workflow automation.",
+            "zh": "配置工作流自动化"
+          },
+          {
+            "id": "3",
+            "en": "Create an Azure logic app that includes the Defender for Cloud alert trigger.",
+            "zh": "创建包含 Defender for Cloud 告警触发器的逻辑应用"
+          },
+          {
+            "id": "4",
+            "en": "Create an Azure logic app that includes the Defender for Cloud recommendation trigger.",
+            "zh": "创建包含 Defender for Cloud 建议触发器的逻辑应用"
+          },
+          {
+            "id": "5",
+            "en": "Configure a trigger condition.",
+            "zh": "配置触发条件"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "Create an Azure logic app that includes the Defender for Cloud regulatory compliance assessment trigger.",
+            "zh": "创建包含 Defender for Cloud 合规性评估触发器的逻辑应用"
+          },
+          {
+            "id": "2",
+            "en": "Configure workflow automation.",
+            "zh": "配置工作流自动化"
+          },
+          {
+            "id": "3",
+            "en": "Create an Azure logic app that includes the Defender for Cloud alert trigger.",
+            "zh": "创建包含 Defender for Cloud 告警触发器的逻辑应用"
+          },
+          {
+            "id": "4",
+            "en": "Create an Azure logic app that includes the Defender for Cloud recommendation trigger.",
+            "zh": "创建包含 Defender for Cloud 建议触发器的逻辑应用"
+          },
+          {
+            "id": "5",
+            "en": "Configure a trigger condition.",
+            "zh": "配置触发条件"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "5",
+      "4"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t3-q1": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "Deploy an OMS Gateway on the network.",
+            "zh": "在网络中部署 OMS 网关"
+          },
+          {
+            "id": "2",
+            "en": "Set the syslog daemon to forward the events directly to Azure Sentinel.",
+            "zh": "设置 syslog 守护进程将事件直接转发到 Azure Sentinel"
+          },
+          {
+            "id": "3",
+            "en": "Configure the syslog daemon. Restart the syslog daemon and the Log Analytics agent.",
+            "zh": "配置并重启 syslog 守护进程，同时重启 Log Analytics 代理"
+          },
+          {
+            "id": "4",
+            "en": "Download and install the Log Analytics agent.",
+            "zh": "下载并安装 Log Analytics 代理"
+          },
+          {
+            "id": "5",
+            "en": "Set the Log Analytics agent to listen on port 25226 and forward the CEF messages to Azure Sentinel.",
+            "zh": "设置 Log Analytics 代理监听 25226 端口，并将 CEF 消息转发到 Azure Sentinel"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "Deploy an OMS Gateway on the network.",
+            "zh": "在网络中部署 OMS 网关"
+          },
+          {
+            "id": "2",
+            "en": "Set the syslog daemon to forward the events directly to Azure Sentinel.",
+            "zh": "设置 syslog 守护进程将事件直接转发到 Azure Sentinel"
+          },
+          {
+            "id": "3",
+            "en": "Configure the syslog daemon. Restart the syslog daemon and the Log Analytics agent.",
+            "zh": "配置并重启 syslog 守护进程，同时重启 Log Analytics 代理"
+          },
+          {
+            "id": "4",
+            "en": "Download and install the Log Analytics agent.",
+            "zh": "下载并安装 Log Analytics 代理"
+          },
+          {
+            "id": "5",
+            "en": "Set the Log Analytics agent to listen on port 25226 and forward the CEF messages to Azure Sentinel.",
+            "zh": "设置 Log Analytics 代理监听 25226 端口，并将 CEF 消息转发到 Azure Sentinel"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "Deploy an OMS Gateway on the network.",
+            "zh": "在网络中部署 OMS 网关"
+          },
+          {
+            "id": "2",
+            "en": "Set the syslog daemon to forward the events directly to Azure Sentinel.",
+            "zh": "设置 syslog 守护进程将事件直接转发到 Azure Sentinel"
+          },
+          {
+            "id": "3",
+            "en": "Configure the syslog daemon. Restart the syslog daemon and the Log Analytics agent.",
+            "zh": "配置并重启 syslog 守护进程，同时重启 Log Analytics 代理"
+          },
+          {
+            "id": "4",
+            "en": "Download and install the Log Analytics agent.",
+            "zh": "下载并安装 Log Analytics 代理"
+          },
+          {
+            "id": "5",
+            "en": "Set the Log Analytics agent to listen on port 25226 and forward the CEF messages to Azure Sentinel.",
+            "zh": "设置 Log Analytics 代理监听 25226 端口，并将 CEF 消息转发到 Azure Sentinel"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "4",
+      "5",
+      "3"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t3-q3": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "From Azure Sentinel, select Hunting.",
+            "zh": "从 Azure Sentinel 选择 Hunting"
+          },
+          {
+            "id": "2",
+            "en": "Select Run All Queries.",
+            "zh": "选择运行所有查询"
+          },
+          {
+            "id": "3",
+            "en": "Select New Query.",
+            "zh": "选择新建查询"
+          },
+          {
+            "id": "4",
+            "en": "Filter by tactics.",
+            "zh": "按战术筛选"
+          },
+          {
+            "id": "5",
+            "en": "From Azure Sentinel, select Notebooks.",
+            "zh": "从 Azure Sentinel 选择 Notebooks"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "From Azure Sentinel, select Hunting.",
+            "zh": "从 Azure Sentinel 选择 Hunting"
+          },
+          {
+            "id": "2",
+            "en": "Select Run All Queries.",
+            "zh": "选择运行所有查询"
+          },
+          {
+            "id": "3",
+            "en": "Select New Query.",
+            "zh": "选择新建查询"
+          },
+          {
+            "id": "4",
+            "en": "Filter by tactics.",
+            "zh": "按战术筛选"
+          },
+          {
+            "id": "5",
+            "en": "From Azure Sentinel, select Notebooks.",
+            "zh": "从 Azure Sentinel 选择 Notebooks"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "From Azure Sentinel, select Hunting.",
+            "zh": "从 Azure Sentinel 选择 Hunting"
+          },
+          {
+            "id": "2",
+            "en": "Select Run All Queries.",
+            "zh": "选择运行所有查询"
+          },
+          {
+            "id": "3",
+            "en": "Select New Query.",
+            "zh": "选择新建查询"
+          },
+          {
+            "id": "4",
+            "en": "Filter by tactics.",
+            "zh": "按战术筛选"
+          },
+          {
+            "id": "5",
+            "en": "From Azure Sentinel, select Notebooks.",
+            "zh": "从 Azure Sentinel 选择 Notebooks"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "4",
+      "2"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t3-q13": {
+    "type": "matching",
+    "slots": [
+      {
+        "id": "1",
+        "en": "创建和运行 playbook",
+        "zh": "创建和运行 playbook",
+        "options": [
+          {
+            "id": "1",
+            "en": "Azure Sentinel Contributor",
+            "zh": "Azure Sentinel 参与者"
+          },
+          {
+            "id": "2",
+            "en": "Azure Sentinel Responder",
+            "zh": "Azure Sentinel 响应者"
+          },
+          {
+            "id": "3",
+            "en": "Azure Sentinel Reader",
+            "zh": "Azure Sentinel 读取者"
+          },
+          {
+            "id": "4",
+            "en": "Logic App Contributor",
+            "zh": "Logic App 参与者"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "创建工作簿和分析规则",
+        "zh": "创建工作簿和分析规则",
+        "options": [
+          {
+            "id": "1",
+            "en": "Azure Sentinel Contributor",
+            "zh": "Azure Sentinel 参与者"
+          },
+          {
+            "id": "2",
+            "en": "Azure Sentinel Responder",
+            "zh": "Azure Sentinel 响应者"
+          },
+          {
+            "id": "3",
+            "en": "Azure Sentinel Reader",
+            "zh": "Azure Sentinel 读取者"
+          },
+          {
+            "id": "4",
+            "en": "Logic App Contributor",
+            "zh": "Logic App 参与者"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "4",
+      "1"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t3-q36": {
+    "type": "matching",
+    "slots": [
+      {
+        "id": "1",
+        "en": "从 Syslog 配置中移除发送 CEF 消息的设施",
+        "zh": "从 Syslog 配置中移除发送 CEF 消息的设施",
+        "options": [
+          {
+            "id": "1",
+            "en": "SW1",
+            "zh": "SW1"
+          },
+          {
+            "id": "2",
+            "en": "CEF1",
+            "zh": "CEF1"
+          },
+          {
+            "id": "3",
+            "en": "Server1",
+            "zh": "Server1"
+          },
+          {
+            "id": "4",
+            "en": "Server2",
+            "zh": "Server2"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "从 Log Analytics 代理中禁用 Syslog 同步",
+        "zh": "从 Log Analytics 代理中禁用 Syslog 同步",
+        "options": [
+          {
+            "id": "1",
+            "en": "SW1",
+            "zh": "SW1"
+          },
+          {
+            "id": "2",
+            "en": "CEF1",
+            "zh": "CEF1"
+          },
+          {
+            "id": "3",
+            "en": "Server1",
+            "zh": "Server1"
+          },
+          {
+            "id": "4",
+            "en": "Server2",
+            "zh": "Server2"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "3"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t3-q48": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "Install the Log Analytics agent for Linux on the virtual machines.",
+            "zh": "在虚拟机上安装适用于 Linux 的 Log Analytics 代理"
+          },
+          {
+            "id": "2",
+            "en": "Add Microsoft Sentinel to a workspace.",
+            "zh": "向工作区添加 Microsoft Sentinel"
+          },
+          {
+            "id": "3",
+            "en": "Add a Security Events connector to the workspace.",
+            "zh": "向工作区添加 Security Events 连接器"
+          },
+          {
+            "id": "4",
+            "en": "Add a Microsoft Sentinel workbook.",
+            "zh": "添加 Microsoft Sentinel 工作簿"
+          },
+          {
+            "id": "5",
+            "en": "Add a Syslog connector to the workspace.",
+            "zh": "向工作区添加 Syslog 连接器"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "Install the Log Analytics agent for Linux on the virtual machines.",
+            "zh": "在虚拟机上安装适用于 Linux 的 Log Analytics 代理"
+          },
+          {
+            "id": "2",
+            "en": "Add Microsoft Sentinel to a workspace.",
+            "zh": "向工作区添加 Microsoft Sentinel"
+          },
+          {
+            "id": "3",
+            "en": "Add a Security Events connector to the workspace.",
+            "zh": "向工作区添加 Security Events 连接器"
+          },
+          {
+            "id": "4",
+            "en": "Add a Microsoft Sentinel workbook.",
+            "zh": "添加 Microsoft Sentinel 工作簿"
+          },
+          {
+            "id": "5",
+            "en": "Add a Syslog connector to the workspace.",
+            "zh": "向工作区添加 Syslog 连接器"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "Install the Log Analytics agent for Linux on the virtual machines.",
+            "zh": "在虚拟机上安装适用于 Linux 的 Log Analytics 代理"
+          },
+          {
+            "id": "2",
+            "en": "Add Microsoft Sentinel to a workspace.",
+            "zh": "向工作区添加 Microsoft Sentinel"
+          },
+          {
+            "id": "3",
+            "en": "Add a Security Events connector to the workspace.",
+            "zh": "向工作区添加 Security Events 连接器"
+          },
+          {
+            "id": "4",
+            "en": "Add a Microsoft Sentinel workbook.",
+            "zh": "添加 Microsoft Sentinel 工作簿"
+          },
+          {
+            "id": "5",
+            "en": "Add a Syslog connector to the workspace.",
+            "zh": "向工作区添加 Syslog 连接器"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "5",
+      "1"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t3-q80": {
+    "type": "matching",
+    "slots": [
+      {
+        "id": "1",
+        "en": "创建书签所使用的页面",
+        "zh": "创建书签所使用的页面",
+        "options": [
+          {
+            "id": "1",
+            "en": "Hunting blade",
+            "zh": "Hunting 页面"
+          },
+          {
+            "id": "2",
+            "en": "Incident blade",
+            "zh": "Incident 页面"
+          },
+          {
+            "id": "3",
+            "en": "Logs blade",
+            "zh": "Logs 页面"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "将书签关联到事件所使用的页面",
+        "zh": "将书签关联到事件所使用的页面",
+        "options": [
+          {
+            "id": "1",
+            "en": "Hunting blade",
+            "zh": "Hunting 页面"
+          },
+          {
+            "id": "2",
+            "en": "Incident blade",
+            "zh": "Incident 页面"
+          },
+          {
+            "id": "3",
+            "en": "Logs blade",
+            "zh": "Logs 页面"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "1"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t3-q84": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "For Sentinel1, configure the Windows Forwarded Events connector.",
+            "zh": "为 Sentinel1 配置 Windows Forwarded Events 连接器"
+          },
+          {
+            "id": "2",
+            "en": "To the AD DS domain, deploy Microsoft Defender for Identity.",
+            "zh": "向 AD DS 域部署 Microsoft Defender for Identity"
+          },
+          {
+            "id": "3",
+            "en": "For the AD DS domain, configure Windows Event Forwarding.",
+            "zh": "为 AD DS 域配置 Windows Event Forwarding"
+          },
+          {
+            "id": "4",
+            "en": "From Sentinel1, collect the AD DS security events by using the Legacy Agent connector.",
+            "zh": "从 Sentinel1 使用 Legacy Agent 连接器收集 AD DS 安全事件"
+          },
+          {
+            "id": "5",
+            "en": "For Sentinel1, configure the Microsoft Defender for Identity connector.",
+            "zh": "为 Sentinel1 配置 Microsoft Defender for Identity 连接器"
+          },
+          {
+            "id": "6",
+            "en": "For Sentinel1, enable UEBA.",
+            "zh": "为 Sentinel1 启用 UEBA"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "For Sentinel1, configure the Windows Forwarded Events connector.",
+            "zh": "为 Sentinel1 配置 Windows Forwarded Events 连接器"
+          },
+          {
+            "id": "2",
+            "en": "To the AD DS domain, deploy Microsoft Defender for Identity.",
+            "zh": "向 AD DS 域部署 Microsoft Defender for Identity"
+          },
+          {
+            "id": "3",
+            "en": "For the AD DS domain, configure Windows Event Forwarding.",
+            "zh": "为 AD DS 域配置 Windows Event Forwarding"
+          },
+          {
+            "id": "4",
+            "en": "From Sentinel1, collect the AD DS security events by using the Legacy Agent connector.",
+            "zh": "从 Sentinel1 使用 Legacy Agent 连接器收集 AD DS 安全事件"
+          },
+          {
+            "id": "5",
+            "en": "For Sentinel1, configure the Microsoft Defender for Identity connector.",
+            "zh": "为 Sentinel1 配置 Microsoft Defender for Identity 连接器"
+          },
+          {
+            "id": "6",
+            "en": "For Sentinel1, enable UEBA.",
+            "zh": "为 Sentinel1 启用 UEBA"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "For Sentinel1, configure the Windows Forwarded Events connector.",
+            "zh": "为 Sentinel1 配置 Windows Forwarded Events 连接器"
+          },
+          {
+            "id": "2",
+            "en": "To the AD DS domain, deploy Microsoft Defender for Identity.",
+            "zh": "向 AD DS 域部署 Microsoft Defender for Identity"
+          },
+          {
+            "id": "3",
+            "en": "For the AD DS domain, configure Windows Event Forwarding.",
+            "zh": "为 AD DS 域配置 Windows Event Forwarding"
+          },
+          {
+            "id": "4",
+            "en": "From Sentinel1, collect the AD DS security events by using the Legacy Agent connector.",
+            "zh": "从 Sentinel1 使用 Legacy Agent 连接器收集 AD DS 安全事件"
+          },
+          {
+            "id": "5",
+            "en": "For Sentinel1, configure the Microsoft Defender for Identity connector.",
+            "zh": "为 Sentinel1 配置 Microsoft Defender for Identity 连接器"
+          },
+          {
+            "id": "6",
+            "en": "For Sentinel1, enable UEBA.",
+            "zh": "为 Sentinel1 启用 UEBA"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "5",
+      "6"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t3-q88": {
+    "type": "matching",
+    "slots": [
+      {
+        "id": "1",
+        "en": "User1",
+        "zh": "User1",
+        "options": [
+          {
+            "id": "1",
+            "en": "Contributor",
+            "zh": "Contributor"
+          },
+          {
+            "id": "2",
+            "en": "Microsoft Sentinel Automation Contributor",
+            "zh": "Microsoft Sentinel Automation Contributor"
+          },
+          {
+            "id": "3",
+            "en": "Microsoft Sentinel Contributor",
+            "zh": "Microsoft Sentinel Contributor"
+          },
+          {
+            "id": "4",
+            "en": "Microsoft Sentinel Reader",
+            "zh": "Microsoft Sentinel Reader"
+          },
+          {
+            "id": "5",
+            "en": "Microsoft Sentinel Responder",
+            "zh": "Microsoft Sentinel Responder"
+          },
+          {
+            "id": "6",
+            "en": "Reader",
+            "zh": "Reader"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "User2",
+        "zh": "User2",
+        "options": [
+          {
+            "id": "1",
+            "en": "Contributor",
+            "zh": "Contributor"
+          },
+          {
+            "id": "2",
+            "en": "Microsoft Sentinel Automation Contributor",
+            "zh": "Microsoft Sentinel Automation Contributor"
+          },
+          {
+            "id": "3",
+            "en": "Microsoft Sentinel Contributor",
+            "zh": "Microsoft Sentinel Contributor"
+          },
+          {
+            "id": "4",
+            "en": "Microsoft Sentinel Reader",
+            "zh": "Microsoft Sentinel Reader"
+          },
+          {
+            "id": "5",
+            "en": "Microsoft Sentinel Responder",
+            "zh": "Microsoft Sentinel Responder"
+          },
+          {
+            "id": "6",
+            "en": "Reader",
+            "zh": "Reader"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "5",
+      "3"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t7-q3": {
+    "type": "matching",
+    "slots": [
+      {
+        "id": "1",
+        "en": "查看实体数据",
+        "zh": "查看实体数据",
+        "options": [
+          {
+            "id": "1",
+            "en": "Anomalies",
+            "zh": "Anomalies"
+          },
+          {
+            "id": "2",
+            "en": "AuditLogs",
+            "zh": "AuditLogs"
+          },
+          {
+            "id": "3",
+            "en": "AzureDiagnostics",
+            "zh": "AzureDiagnostics"
+          },
+          {
+            "id": "4",
+            "en": "BehaviorAnalytics",
+            "zh": "BehaviorAnalytics"
+          },
+          {
+            "id": "5",
+            "en": "CommonSecurityLog",
+            "zh": "CommonSecurityLog"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "评估规则质量",
+        "zh": "评估规则质量",
+        "options": [
+          {
+            "id": "1",
+            "en": "Anomalies",
+            "zh": "Anomalies"
+          },
+          {
+            "id": "2",
+            "en": "AuditLogs",
+            "zh": "AuditLogs"
+          },
+          {
+            "id": "3",
+            "en": "AzureDiagnostics",
+            "zh": "AzureDiagnostics"
+          },
+          {
+            "id": "4",
+            "en": "BehaviorAnalytics",
+            "zh": "BehaviorAnalytics"
+          },
+          {
+            "id": "5",
+            "en": "CommonSecurityLog",
+            "zh": "CommonSecurityLog"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "4",
+      "1"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  },
+  "t13-q2": {
+    "type": "ordering",
+    "slots": [
+      {
+        "id": "1",
+        "en": "Step 1",
+        "zh": "步骤 1",
+        "options": [
+          {
+            "id": "1",
+            "en": "Add a bookmark and map an entity.",
+            "zh": "添加书签并映射实体"
+          },
+          {
+            "id": "2",
+            "en": "From Azure Monitor, run a Log Analytics query.",
+            "zh": "从 Azure Monitor 运行 Log Analytics 查询"
+          },
+          {
+            "id": "3",
+            "en": "Add the query to favorites.",
+            "zh": "将查询添加到收藏夹"
+          },
+          {
+            "id": "4",
+            "en": "Select a query result.",
+            "zh": "选择查询结果"
+          },
+          {
+            "id": "5",
+            "en": "From the Azure Sentinel workspace, run a Log Analytics query.",
+            "zh": "从 Azure Sentinel 工作区运行 Log Analytics 查询"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Step 2",
+        "zh": "步骤 2",
+        "options": [
+          {
+            "id": "1",
+            "en": "Add a bookmark and map an entity.",
+            "zh": "添加书签并映射实体"
+          },
+          {
+            "id": "2",
+            "en": "From Azure Monitor, run a Log Analytics query.",
+            "zh": "从 Azure Monitor 运行 Log Analytics 查询"
+          },
+          {
+            "id": "3",
+            "en": "Add the query to favorites.",
+            "zh": "将查询添加到收藏夹"
+          },
+          {
+            "id": "4",
+            "en": "Select a query result.",
+            "zh": "选择查询结果"
+          },
+          {
+            "id": "5",
+            "en": "From the Azure Sentinel workspace, run a Log Analytics query.",
+            "zh": "从 Azure Sentinel 工作区运行 Log Analytics 查询"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Step 3",
+        "zh": "步骤 3",
+        "options": [
+          {
+            "id": "1",
+            "en": "Add a bookmark and map an entity.",
+            "zh": "添加书签并映射实体"
+          },
+          {
+            "id": "2",
+            "en": "From Azure Monitor, run a Log Analytics query.",
+            "zh": "从 Azure Monitor 运行 Log Analytics 查询"
+          },
+          {
+            "id": "3",
+            "en": "Add the query to favorites.",
+            "zh": "将查询添加到收藏夹"
+          },
+          {
+            "id": "4",
+            "en": "Select a query result.",
+            "zh": "选择查询结果"
+          },
+          {
+            "id": "5",
+            "en": "From the Azure Sentinel workspace, run a Log Analytics query.",
+            "zh": "从 Azure Sentinel 工作区运行 Log Analytics 查询"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "5",
+      "4",
+      "1"
+    ],
+    "status": "ready",
+    "issues": [],
+    "structure_status": "reviewed"
+  }
+}

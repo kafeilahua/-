@@ -1,0 +1,13 @@
+name: sc200-study
+services:
+  sc200:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - study-data:/app/storage
+    environment:
+      SC200_SECURE_COOKIE: "0"
+    restart: "no"
+volumes:
+  study-data:

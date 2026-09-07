@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+node_modules/
+frontend/dist/
+*.db
+*.db-shm
+*.db-wal
+.env
+.DS_Store
+playwright-report/
+test-results/
+data/ocr-cache/
+*.tsbuildinfo
+runtime/
+data/translation-cache.json

@@ -1,0 +1,6303 @@
+{
+  "t1-q7": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "join",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "project",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "union",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "extend",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "join",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "project",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "union",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Answer area 3 (top to bottom)",
+        "zh": "第 3 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "extend",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "join",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "project",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "union",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "3",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 10,
+        "rect": [
+          426,
+          79,
+          586,
+          104
+        ],
+        "text": "join",
+        "min_confidence": 0.8394004702568054
+      },
+      {
+        "page": 10,
+        "rect": [
+          422,
+          353,
+          582,
+          387
+        ],
+        "text": "project",
+        "min_confidence": 0.998794674873352
+      },
+      {
+        "page": 10,
+        "rect": [
+          421,
+          618,
+          581,
+          650
+        ],
+        "text": "project",
+        "min_confidence": 0.9986377954483032
+      }
+    ]
+  },
+  "t1-q14": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "EmailAttachementinfo",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "EmailEvents",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "IdentityLogonEvents",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "EmailEvents",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "IdentityLogonEvents",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Answer area 3 (top to bottom)",
+        "zh": "第 3 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "select 20",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "take 20",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "top 20",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "2",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 17,
+        "rect": [
+          537,
+          1942,
+          862,
+          1976
+        ],
+        "text": "EmailEvents",
+        "min_confidence": 0.9945676326751709
+      },
+      {
+        "page": 18,
+        "rect": [
+          312,
+          107,
+          637,
+          142
+        ],
+        "text": "IdentityLogonEvents",
+        "min_confidence": 0.9803439974784851
+      },
+      {
+        "page": 18,
+        "rect": [
+          198,
+          330,
+          477,
+          365
+        ],
+        "text": "take 20",
+        "min_confidence": 0.9713801741600037
+      }
+    ]
+  },
+  "t1-q17": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Deviceld",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "RecipientEmailAddress",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "SenderFromAddress",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "SHA256",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "4"
+    ],
+    "evidence": [
+      {
+        "page": 22,
+        "rect": [
+          290,
+          433,
+          827,
+          470
+        ],
+        "text": "SHA256",
+        "min_confidence": 0.9987561106681824
+      }
+    ]
+  },
+  "t1-q19": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Access policy",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Activity policy",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Anomaly detectionpolicy",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "IP address tag",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Source",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "User agent string",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 24,
+        "rect": [
+          996,
+          1703,
+          1431,
+          1753
+        ],
+        "text": "Activity policy",
+        "min_confidence": 0.9637417197227478
+      },
+      {
+        "page": 24,
+        "rect": [
+          1000,
+          1864,
+          1433,
+          1916
+        ],
+        "text": "IP address tag",
+        "min_confidence": 0.9664861559867859
+      }
+    ]
+  },
+  "t1-q27": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Turn on endpoint detection and response (EDR) in block mode",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Turn on Live Response",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Turn off Tamper Protection",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Add a network assessment job",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Create a device group that contains the devices and set Automation level to Full",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Create a device group that contains the devices and set Automation level to No automated response",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 33,
+        "rect": [
+          586,
+          1774,
+          1270,
+          1805
+        ],
+        "text": "Turn on Live Response",
+        "min_confidence": 0.9502410888671875
+      },
+      {
+        "page": 33,
+        "rect": [
+          590,
+          1914,
+          1484,
+          1944
+        ],
+        "text": "Create a device group that contains the devices and set Automation level to Full",
+        "min_confidence": 0.9684826135635376
+      }
+    ]
+  },
+  "t1-q28": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "extend",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "join",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "project",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "project",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "summarize",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "take",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "project summarize take",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "4"
+    ],
+    "evidence": [
+      {
+        "page": 34,
+        "rect": [
+          414,
+          1822,
+          591,
+          1857
+        ],
+        "text": "join",
+        "min_confidence": 0.9977851510047913
+      },
+      {
+        "page": 34,
+        "rect": [
+          409,
+          2057,
+          667,
+          2203
+        ],
+        "text": "project summarize take",
+        "min_confidence": 0.995340883731842
+      }
+    ]
+  },
+  "t1-q38": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "where Timestamp > ago(1h)",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "|where Timestamp < ago(1h)",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Ijoin DeviceFileEvents on SHA256",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "joinkind=inner (DeviceFileEvents |where Timestamp>ago(1h)) on SHA256",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "| where Timestamp > ago(1h)",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 45,
+        "rect": [
+          372,
+          2009,
+          681,
+          2050
+        ],
+        "text": "where Timestamp > ago(1h)",
+        "min_confidence": 0.8903629779815674
+      },
+      {
+        "page": 45,
+        "rect": [
+          377,
+          2195,
+          1141,
+          2229
+        ],
+        "text": "joinkind=inner (DeviceFileEvents |where Timestamp>ago(1h)) on SHA256",
+        "min_confidence": 0.9319702386856079
+      }
+    ]
+  },
+  "t1-q43": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Identitvlnfo",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "dentitvl ogonFvents",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "IdentityQueryEvents",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 54,
+        "rect": [
+          391,
+          1933,
+          574,
+          1963
+        ],
+        "text": "dentitvl ogonFvents",
+        "min_confidence": 0.8966478109359741
+      }
+    ]
+  },
+  "t1-q46": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "The custom detection rule can be used to automate the deletion of email messages from a user's mailbox based on the RecipientEmailAddress column.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "The custom detection rule can be used to restrict app execution automatically based on the DeviceId column.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "The custom detection rule can be used to automate the deletion of a file based on the sHA256 column.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "no",
+      "yes",
+      "yes"
+    ],
+    "evidence": [
+      {
+        "page": 58,
+        "rect": [
+          1290,
+          1930,
+          1337,
+          1976
+        ],
+        "text": "no",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      },
+      {
+        "page": 58,
+        "rect": [
+          1135,
+          2008,
+          1182,
+          2050
+        ],
+        "text": "yes",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      },
+      {
+        "page": 58,
+        "rect": [
+          1137,
+          2093,
+          1187,
+          2135
+        ],
+        "text": "yes",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      }
+    ]
+  },
+  "t1-q51": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Copied file",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Downloaded files to computer",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Share file, folder, or site",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "Shared Power Bl report",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 64,
+        "rect": [
+          593,
+          2104,
+          1000,
+          2147
+        ],
+        "text": "Share file, folder, or site",
+        "min_confidence": 0.9241995811462402
+      }
+    ]
+  },
+  "t2-q3": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "When an Azure Security Center Recommendation is created or triggered",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "When an Azure Security Center Alert is created or triggered",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "When a response to an Azure Security Center alert is triggered",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Recommendations",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Workflowautomation",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Security alerts",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 88,
+        "rect": [
+          580,
+          1950,
+          1471,
+          1992
+        ],
+        "text": "When an Azure Security Center Recommendation is created or triggered",
+        "min_confidence": 0.9359064102172852
+      },
+      {
+        "page": 88,
+        "rect": [
+          584,
+          2201,
+          1016,
+          2240
+        ],
+        "text": "Security alerts",
+        "min_confidence": 0.9596086144447327
+      }
+    ]
+  },
+  "t2-q14": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Microsoft.Automation",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Microsoft.Logic",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Microsoft.Security",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Microsoft.Automation",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Microsoft.Logic",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Microsoft.Security",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 102,
+        "rect": [
+          392,
+          2025,
+          680,
+          2054
+        ],
+        "text": "Microsoft.Security",
+        "min_confidence": 0.9307886958122253
+      },
+      {
+        "page": 103,
+        "rect": [
+          704,
+          333,
+          992,
+          364
+        ],
+        "text": "Microsoft.Logic",
+        "min_confidence": 0.9795119762420654
+      }
+    ]
+  },
+  "t2-q17": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Both virtual machines have inbound rules that allow access from either Any or Internet ranges.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Both virtual machines have management ports exposed directly to the internet.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "If you enable just-in-time network access controls on all virtual machines, you will increase the secure score by four point.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "yes",
+      "no",
+      "yes"
+    ],
+    "evidence": [
+      {
+        "page": 107,
+        "rect": [
+          1042,
+          1325,
+          1091,
+          1369
+        ],
+        "text": "yes",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      },
+      {
+        "page": 107,
+        "rect": [
+          1237,
+          1420,
+          1286,
+          1463
+        ],
+        "text": "no",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      },
+      {
+        "page": 107,
+        "rect": [
+          1047,
+          1523,
+          1097,
+          1568
+        ],
+        "text": "yes",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      }
+    ]
+  },
+  "t2-q21": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "IP address",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Azure Resource",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Host",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "User account",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Name",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Resource ld",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Address",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "Command line",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 112,
+        "rect": [
+          876,
+          2046,
+          1234,
+          2106
+        ],
+        "text": "Azure Resource",
+        "min_confidence": 0.9913588762283325
+      },
+      {
+        "page": 113,
+        "rect": [
+          875,
+          188,
+          1234,
+          246
+        ],
+        "text": "Resource ld",
+        "min_confidence": 0.9721438884735107
+      }
+    ]
+  },
+  "t2-q26": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Append",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "DeploylfNotExists",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "EnforceRegoPolicy",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "AnAzureAutomationrunbookthathasawebhook",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "AnAzure LogicAppsappthat hasthe trigger settoWhenanAzure Security CenterAlertiscreatedortriggered",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "An Azure Logic Apps app that has the trigger set to When a response to an Azure Security Center alert is triggered",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 119,
+        "rect": [
+          169,
+          1618,
+          442,
+          1649
+        ],
+        "text": "DeploylfNotExists",
+        "min_confidence": 0.9875414371490479
+      },
+      {
+        "page": 119,
+        "rect": [
+          169,
+          1811,
+          1488,
+          1845
+        ],
+        "text": "AnAzure LogicAppsappthat hasthe trigger settoWhenanAzure Security CenterAlertiscreatedortriggered",
+        "min_confidence": 0.9552155137062073
+      }
+    ]
+  },
+  "t2-q27": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Conditional Access",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Microsoft Entra Domain Services",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Microsoft Entra ID Protection",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Microsoft Defender for Cloud Apps",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Microsoft Defender for Identity",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Microsoft Defender for Office 365",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 120,
+        "rect": [
+          807,
+          2065,
+          1477,
+          2121
+        ],
+        "text": "Conditional Access",
+        "min_confidence": 0.9963901042938232
+      },
+      {
+        "page": 121,
+        "rect": [
+          809,
+          138,
+          1479,
+          197
+        ],
+        "text": "Microsoft Defender for Cloud Apps",
+        "min_confidence": 0.9944571256637573
+      }
+    ]
+  },
+  "t2-q38": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "\"Microsoft Logic/workflows\"",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "\"Microsoft.Security/automations\",",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "actions",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "contents",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "triggers",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 135,
+        "rect": [
+          494,
+          115,
+          873,
+          164
+        ],
+        "text": "\"Microsoft.Security/automations\",",
+        "min_confidence": 0.9742259383201599
+      },
+      {
+        "page": 135,
+        "rect": [
+          801,
+          608,
+          910,
+          643
+        ],
+        "text": "triggers",
+        "min_confidence": 0.9981924891471863
+      }
+    ]
+  },
+  "t2-q39": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "When a Defender for Cloud Recommendation is created or triggered",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "When a Defender for Cloud Alert Is created or triggered",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "W/hon",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "When a Defender for Cloud Recommendation is created or triggered When a Defender for Cloud Alert Is created or triggered",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Recommendations",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Security alerts",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Regulatory compliance standards",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "4",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 136,
+        "rect": [
+          601,
+          2169,
+          1415,
+          2234
+        ],
+        "text": "When a Defender for Cloud Recommendation is created or triggered When a Defender for Cloud Alert Is created or triggered",
+        "min_confidence": 0.9274249076843262
+      },
+      {
+        "page": 137,
+        "rect": [
+          599,
+          188,
+          1008,
+          232
+        ],
+        "text": "Security alerts",
+        "min_confidence": 0.9849127531051636
+      }
+    ]
+  },
+  "t2-q47": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Deploying a Bicep template",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Running a script in Azure Cloud Shell",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Running a script in GCP Cloud Shell",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 146,
+        "rect": [
+          683,
+          2143,
+          1095,
+          2185
+        ],
+        "text": "Running a script in GCP Cloud Shell",
+        "min_confidence": 0.9203956723213196
+      }
+    ]
+  },
+  "t2-q50": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Contributor",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Owner",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Security Admin",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "Security Assessment Contributor",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Security Admin",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Security Assessment Contributor",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 156,
+        "rect": [
+          666,
+          1856,
+          1419,
+          1922
+        ],
+        "text": "Owner",
+        "min_confidence": 0.9995697736740112
+      },
+      {
+        "page": 157,
+        "rect": [
+          669,
+          79,
+          1419,
+          126
+        ],
+        "text": "Security Admin",
+        "min_confidence": 0.9506593346595764
+      }
+    ]
+  },
+  "t2-q58": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "inputs:",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "outputs:",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "categories:",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "inputs:",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "outputs:",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 170,
+        "rect": [
+          616,
+          259,
+          752,
+          316
+        ],
+        "text": "inputs:",
+        "min_confidence": 0.9822176694869995
+      },
+      {
+        "page": 170,
+        "rect": [
+          681,
+          453,
+          872,
+          506
+        ],
+        "text": "categories:",
+        "min_confidence": 0.9967358112335205
+      }
+    ]
+  },
+  "t3-q2": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "the lastfiveWindows security log events",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "the open ports on the host",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "the running processes",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Entities",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Info",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Insights",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "Timeline",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 183,
+        "rect": [
+          839,
+          144,
+          1477,
+          187
+        ],
+        "text": "the running processes",
+        "min_confidence": 0.9820130467414856
+      },
+      {
+        "page": 183,
+        "rect": [
+          840,
+          252,
+          1479,
+          296
+        ],
+        "text": "Entities",
+        "min_confidence": 0.9924416542053223
+      }
+    ]
+  },
+  "t3-q15": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "O alerts",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "1alert",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "2 alerts",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "3 alerts",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "O alerts",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "1alert",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "2 alerts",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "3 alerts",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 197,
+        "rect": [
+          1162,
+          1294,
+          1379,
+          1335
+        ],
+        "text": "O alerts",
+        "min_confidence": 0.9124117493629456
+      },
+      {
+        "page": 197,
+        "rect": [
+          1167,
+          1545,
+          1382,
+          1591
+        ],
+        "text": "1alert",
+        "min_confidence": 0.9955026507377625
+      }
+    ]
+  },
+  "t3-q26": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Custom",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Office 365",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Security Events",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "Syslog",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Custom",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Office 365",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Security Events",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "Syslog",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "4"
+    ],
+    "evidence": [
+      {
+        "page": 208,
+        "rect": [
+          1024,
+          1904,
+          1336,
+          1947
+        ],
+        "text": "Office 365",
+        "min_confidence": 0.9696203470230103
+      },
+      {
+        "page": 208,
+        "rect": [
+          1022,
+          2241,
+          1334,
+          2260
+        ],
+        "text": "Syslog",
+        "min_confidence": 0.8366976380348206
+      }
+    ]
+  },
+  "t3-q35": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "arg_max",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "limit",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "top",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "project",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "sort",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "summarize",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 219,
+        "rect": [
+          521,
+          1680,
+          731,
+          1721
+        ],
+        "text": "arg_max",
+        "min_confidence": 0.9780302047729492
+      },
+      {
+        "page": 219,
+        "rect": [
+          228,
+          1762,
+          493,
+          1806
+        ],
+        "text": "summarize",
+        "min_confidence": 0.9953816533088684
+      }
+    ]
+  },
+  "t3-q39": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "AzureActivity",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "BehaviorAnalytics",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "SecurityEvent",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "autocluster()",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "bin(",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "count(",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 225,
+        "rect": [
+          179,
+          236,
+          539,
+          273
+        ],
+        "text": "AzureActivity",
+        "min_confidence": 0.9920483231544495
+      },
+      {
+        "page": 225,
+        "rect": [
+          454,
+          832,
+          814,
+          870
+        ],
+        "text": "autocluster()",
+        "min_confidence": 0.9716184139251709
+      }
+    ]
+  },
+  "t3-q47": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Azure event hub",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Azure Storage account",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Log Analytics workspace",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Configuring continuous export in Defender for Cloud for each subscription",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Creating an Azure Policy assignment at the root management group",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Modifying the diagnostic settings of the tenant",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 235,
+        "rect": [
+          544,
+          1680,
+          886,
+          1727
+        ],
+        "text": "Azure event hub",
+        "min_confidence": 0.9943128824234009
+      },
+      {
+        "page": 235,
+        "rect": [
+          547,
+          1899,
+          1449,
+          1945
+        ],
+        "text": "Creating an Azure Policy assignment at the root management group",
+        "min_confidence": 0.945041835308075
+      }
+    ]
+  },
+  "t3-q53": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Thequerywill identify theroleassignmentofUser2.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "The guerywill identify thecreation of User3.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "no",
+      "no"
+    ],
+    "evidence": [
+      {
+        "page": 241,
+        "rect": [
+          1403,
+          2088,
+          1458,
+          2139
+        ],
+        "text": "no",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      },
+      {
+        "page": 241,
+        "rect": [
+          1405,
+          2169,
+          1461,
+          2225
+        ],
+        "text": "no",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      }
+    ]
+  },
+  "t3-q54": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "The UserName field is set as theaccountentity",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Thewatchlistcannotbeupdated afteritiscreated.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "The IPList variable is set as the IP address entity.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "yes",
+      "no",
+      "no"
+    ],
+    "evidence": [
+      {
+        "page": 243,
+        "rect": [
+          1242,
+          1808,
+          1295,
+          1856
+        ],
+        "text": "yes",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      },
+      {
+        "page": 243,
+        "rect": [
+          1426,
+          1895,
+          1479,
+          1948
+        ],
+        "text": "no",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      },
+      {
+        "page": 243,
+        "rect": [
+          1428,
+          1986,
+          1482,
+          2035
+        ],
+        "text": "no",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      }
+    ]
+  },
+  "t3-q55": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "evaluate",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "getschema",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "invoke",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "parse",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "invoke",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "parse",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 244,
+        "rect": [
+          769,
+          1491,
+          866,
+          1518
+        ],
+        "text": "getschema",
+        "min_confidence": 0.9917637705802917
+      },
+      {
+        "page": 244,
+        "rect": [
+          968,
+          1511,
+          1037,
+          1540
+        ],
+        "text": "invoke",
+        "min_confidence": 0.9928321242332458
+      }
+    ]
+  },
+  "t3-q56": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "I join kind=fullouter(",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Linin kindsinner",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "joinkind=innerunique(",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "BehaviorAnalytics",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Identtyinto",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "SecurityEvent",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 245,
+        "rect": [
+          562,
+          1949,
+          761,
+          1982
+        ],
+        "text": "joinkind=innerunique(",
+        "min_confidence": 0.9230145812034607
+      },
+      {
+        "page": 245,
+        "rect": [
+          562,
+          2011,
+          701,
+          2043
+        ],
+        "text": "BehaviorAnalytics",
+        "min_confidence": 0.9847212433815002
+      }
+    ]
+  },
+  "t3-q57": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "imAuthentication",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "imNetworkSession",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "imProcessCreate",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "imWebSession",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "SrcGeoRegion",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "DstGeoCountry",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "SrcGeoCounttry",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 247,
+        "rect": [
+          402,
+          1826,
+          532,
+          1851
+        ],
+        "text": "imAuthentication",
+        "min_confidence": 0.975610613822937
+      },
+      {
+        "page": 247,
+        "rect": [
+          601,
+          2069,
+          716,
+          2094
+        ],
+        "text": "SrcGeoCounttry",
+        "min_confidence": 0.915934145450592
+      }
+    ]
+  },
+  "t3-q58": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Set retention to 90 days.",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Set retention to 3os days.",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Set retention to 90 days. Set retention to 3os days.",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 250,
+        "rect": [
+          946,
+          79,
+          1130,
+          111
+        ],
+        "text": "Set retention to 90 days. Set retention to 3os days.",
+        "min_confidence": 0.9486391544342041
+      }
+    ]
+  },
+  "t3-q59": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "A managed identity",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Aserviceprincipal",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "An Azure AD user account",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "MicrosoftSentinel AutomationContributor",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Microsoft Sentinel Reader",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "MicrosoftSentinel Responder",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 251,
+        "rect": [
+          760,
+          1736,
+          1473,
+          1779
+        ],
+        "text": "A managed identity",
+        "min_confidence": 0.945368766784668
+      },
+      {
+        "page": 251,
+        "rect": [
+          757,
+          1926,
+          1403,
+          1971
+        ],
+        "text": "Microsoft Sentinel Reader",
+        "min_confidence": 0.9724537134170532
+      }
+    ]
+  },
+  "t3-q62": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "project",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "render",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 254,
+        "rect": [
+          409,
+          1847,
+          501,
+          1887
+        ],
+        "text": "render",
+        "min_confidence": 0.9988662600517273
+      }
+    ]
+  },
+  "t3-q65": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Im Dns",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Dns",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "imDns",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "(starttime=ago(1d).responsecodename= 'NXDoMAIN'",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "where TimeGenerated > ago(1d) | where ResponseCodeName =~\"NXDOMAIN\"",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "whereResponseCodeName==NXDOMA",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "(starttime=ago(1d).responsecodename= 'NXDoMAIN' where TimeGenerated > ago(1d) | where ResponseCodeName =~\"NXDOMAIN\" whereResponseCodeName==NXDOMA where TimeGenerated>ago(1d)",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "4"
+    ],
+    "evidence": [
+      {
+        "page": 257,
+        "rect": [
+          369,
+          1840,
+          516,
+          1880
+        ],
+        "text": "Im Dns",
+        "min_confidence": 0.9647089838981628
+      },
+      {
+        "page": 257,
+        "rect": [
+          367,
+          2026,
+          1337,
+          2111
+        ],
+        "text": "(starttime=ago(1d).responsecodename= 'NXDoMAIN' where TimeGenerated > ago(1d) | where ResponseCodeName =~\"NXDOMAIN\" whereResponseCodeName==NXDOMA where TimeGenerated>ago(1d)",
+        "min_confidence": 0.8819824457168579
+      }
+    ]
+  },
+  "t3-q69": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Alerts",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Entities",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Investigate",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Alerts",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Bookmarks",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Comments",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "Status",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 263,
+        "rect": [
+          1155,
+          393,
+          1302,
+          441
+        ],
+        "text": "Investigate",
+        "min_confidence": 0.9979743957519531
+      },
+      {
+        "page": 263,
+        "rect": [
+          1152,
+          558,
+          1307,
+          597
+        ],
+        "text": "Comments",
+        "min_confidence": 0.9966814517974854
+      }
+    ]
+  },
+  "t3-q75": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Im  Dns",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "imDns",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 288,
+        "rect": [
+          379,
+          1769,
+          494,
+          1803
+        ],
+        "text": "Im  Dns",
+        "min_confidence": 0.8812739253044128
+      }
+    ]
+  },
+  "t3-q76": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "KQL",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "WQL",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 293,
+        "rect": [
+          858,
+          121,
+          933,
+          173
+        ],
+        "text": "KQL",
+        "min_confidence": 0.984512984752655
+      }
+    ]
+  },
+  "t3-q77": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "AuditLoqs",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "AzureActivity",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "BehaviorAnalytics",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "SecurityEvent",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "AuditLoqs",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "AzureActivity",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "BehaviorAnalytics",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "SecurityEvent",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 294,
+        "rect": [
+          171,
+          2118,
+          518,
+          2152
+        ],
+        "text": "BehaviorAnalytics",
+        "min_confidence": 0.9981098175048828
+      },
+      {
+        "page": 295,
+        "rect": [
+          173,
+          204,
+          518,
+          243
+        ],
+        "text": "AuditLoqs",
+        "min_confidence": 0.992727518081665
+      }
+    ]
+  },
+  "t3-q81": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Microsoft Sentinel Contributor",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Microsoft Sentinel Responder",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Directory readers",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Globalreader",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 299,
+        "rect": [
+          569,
+          1890,
+          999,
+          1951
+        ],
+        "text": "Microsoft Sentinel Responder",
+        "min_confidence": 0.9731239080429077
+      },
+      {
+        "page": 299,
+        "rect": [
+          578,
+          2083,
+          847,
+          2141
+        ],
+        "text": "Directory readers",
+        "min_confidence": 0.9854512810707092
+      }
+    ]
+  },
+  "t3-q86": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "AuditLogs",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "AzureActivity",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "AzureDiagnostics",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "AzureActivity AzureDiagnostics",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Iextend",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Iparse-where",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Iwhere",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "4",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 308,
+        "rect": [
+          379,
+          1955,
+          672,
+          2017
+        ],
+        "text": "AzureActivity AzureDiagnostics",
+        "min_confidence": 0.9382110834121704
+      },
+      {
+        "page": 309,
+        "rect": [
+          389,
+          124,
+          639,
+          173
+        ],
+        "text": "Iextend",
+        "min_confidence": 0.9381157159805298
+      }
+    ]
+  },
+  "t3-q92": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Microsoft Defender for Identity sensors",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "The Azure Connected Machine agent",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "The Azure Monitor agent",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 317,
+        "rect": [
+          850,
+          1805,
+          1303,
+          1851
+        ],
+        "text": "Microsoft Defender for Identity sensors",
+        "min_confidence": 0.9545052647590637
+      }
+    ]
+  },
+  "t3-q93": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "lookup",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "project",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "summarize",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 319,
+        "rect": [
+          481,
+          1904,
+          625,
+          1941
+        ],
+        "text": "summarize",
+        "min_confidence": 0.995087206363678
+      }
+    ]
+  },
+  "t3-q94": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "APl-based",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Diagnostic settinas",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 320,
+        "rect": [
+          840,
+          2005,
+          1133,
+          2053
+        ],
+        "text": "Diagnostic settinas",
+        "min_confidence": 0.9484320282936096
+      }
+    ]
+  },
+  "t3-q98": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Azure AD Password Protection",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Microsoft Defender for Identity",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Smart lockout",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "A Microsoft security rule",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "The Windows Security Events via AMA connector",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "User and Entity Behavior Analytics (UEBA)",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 334,
+        "rect": [
+          729,
+          577,
+          1441,
+          631
+        ],
+        "text": "Microsoft Defender for Identity",
+        "min_confidence": 0.953725278377533
+      },
+      {
+        "page": 334,
+        "rect": [
+          733,
+          813,
+          1444,
+          863
+        ],
+        "text": "User and Entity Behavior Analytics (UEBA)",
+        "min_confidence": 0.9427781701087952
+      }
+    ]
+  },
+  "t3-q99": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "_Im_Dns",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "ImDns InfobloxNIOS",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "imDns",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "A filtering parameter",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "A pack parameter",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "The WHERE clause",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 338,
+        "rect": [
+          608,
+          867,
+          1037,
+          918
+        ],
+        "text": "_Im_Dns",
+        "min_confidence": 0.9270634651184082
+      },
+      {
+        "page": 338,
+        "rect": [
+          614,
+          1065,
+          1041,
+          1114
+        ],
+        "text": "A filtering parameter",
+        "min_confidence": 0.961104154586792
+      }
+    ]
+  },
+  "t3-q107": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "AuditLogs",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "AzureActivity",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "MicrosoftGraphActivityLogs",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "401",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "402",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "403",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 361,
+        "rect": [
+          175,
+          1879,
+          636,
+          1929
+        ],
+        "text": "AzureActivity",
+        "min_confidence": 0.9987325072288513
+      },
+      {
+        "page": 361,
+        "rect": [
+          1044,
+          2050,
+          1146,
+          2107
+        ],
+        "text": "401",
+        "min_confidence": 0.9998273849487305
+      }
+    ]
+  },
+  "t4-q3": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "For Query1 to return a value of 30, you must change Table plan to Analytics.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "For Query2 to return a value of 240, you must change Total retention period to 120 days.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "For Query3 to return 90 rows, you must change Total retention period to 45 days.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "no",
+      "no",
+      "yes"
+    ],
+    "evidence": [
+      {
+        "page": 366,
+        "rect": [
+          1259,
+          2038,
+          1299,
+          2081
+        ],
+        "text": "no",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      },
+      {
+        "page": 366,
+        "rect": [
+          1259,
+          2116,
+          1301,
+          2158
+        ],
+        "text": "no",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      },
+      {
+        "page": 366,
+        "rect": [
+          1112,
+          2188,
+          1159,
+          2235
+        ],
+        "text": "yes",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      }
+    ]
+  },
+  "t4-q6": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "An Azure virtual machineextension",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "The Azure Monitor Agent and an Azure virtual machine extension",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "The Log Analytics agent and an Azure virtual machine extension",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 372,
+        "rect": [
+          482,
+          433,
+          1255,
+          483
+        ],
+        "text": "The Azure Monitor Agent and an Azure virtual machine extension",
+        "min_confidence": 0.9643018841743469
+      }
+    ]
+  },
+  "t4-q10": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Audit Reader",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Global Reader",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Reviewer",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 377,
+        "rect": [
+          489,
+          2040,
+          672,
+          2083
+        ],
+        "text": "Audit Reader",
+        "min_confidence": 0.9362676739692688
+      }
+    ]
+  },
+  "t4-q13": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Microsoft.Automation",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Micrcoftoni",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Microsoft.Security",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": " Microsoft.Logic",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Mcroson.secuny",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": " Microsoft.Logic Mcroson.secuny",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 382,
+        "rect": [
+          509,
+          152,
+          659,
+          189
+        ],
+        "text": "Microsoft.Security",
+        "min_confidence": 0.9787065982818604
+      },
+      {
+        "page": 382,
+        "rect": [
+          791,
+          516,
+          919,
+          550
+        ],
+        "text": " Microsoft.Logic Mcroson.secuny",
+        "min_confidence": 0.7341949343681335
+      }
+    ]
+  },
+  "t4-q17": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "EventData",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Keywords",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "System",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 386,
+        "rect": [
+          733,
+          1573,
+          882,
+          1615
+        ],
+        "text": "EventData",
+        "min_confidence": 0.9938278198242188
+      }
+    ]
+  },
+  "t4-q22": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "LOG AUTH",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "LOG_CRON",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 391,
+        "rect": [
+          608,
+          2130,
+          784,
+          2171
+        ],
+        "text": "LOG AUTH",
+        "min_confidence": 0.9556072354316711
+      }
+    ]
+  },
+  "t4-q25": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "A service account",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "A system-assigned managed identity",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "A user-assigned managed identity",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "An app registration",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 396,
+        "rect": [
+          743,
+          2118,
+          1216,
+          2173
+        ],
+        "text": "A system-assigned managed identity",
+        "min_confidence": 0.9752880334854126
+      }
+    ]
+  },
+  "t4-q27": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "User1 only",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "User2 only",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "User3 only",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 400,
+        "rect": [
+          586,
+          749,
+          741,
+          802
+        ],
+        "text": "User1 only",
+        "min_confidence": 0.9954851269721985
+      }
+    ]
+  },
+  "t4-q29": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Global Administrator",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Security Administrator",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Security Operator",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 403,
+        "rect": [
+          935,
+          2065,
+          1230,
+          2113
+        ],
+        "text": "Security Administrator",
+        "min_confidence": 0.9777843356132507
+      }
+    ]
+  },
+  "t4-q34": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Group1 only",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Group2 only",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 412,
+        "rect": [
+          569,
+          298,
+          759,
+          363
+        ],
+        "text": "Group1 only",
+        "min_confidence": 0.9790151119232178
+      }
+    ]
+  },
+  "t4-q39": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "30 days",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "60 days",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "90 days",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "120 days",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 421,
+        "rect": [
+          628,
+          348,
+          776,
+          410
+        ],
+        "text": "30 days",
+        "min_confidence": 0.9665728807449341
+      }
+    ]
+  },
+  "t5-q3": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Secure DevOps Kit for Azure (AzSK)",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "The Microsoft Security Code Analysis (MSCA) extension",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "The Microsoft Security DevOps extension",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Inputs",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Jobs",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Steps",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 424,
+        "rect": [
+          559,
+          1933,
+          1290,
+          1988
+        ],
+        "text": "The Microsoft Security DevOps extension",
+        "min_confidence": 0.9511970281600952
+      },
+      {
+        "page": 424,
+        "rect": [
+          561,
+          2131,
+          760,
+          2179
+        ],
+        "text": "Steps",
+        "min_confidence": 0.9933759570121765
+      }
+    ]
+  },
+  "t5-q4": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "CredScan",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Template Analyzer",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Terrascan",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 426,
+        "rect": [
+          833,
+          1888,
+          1061,
+          1928
+        ],
+        "text": "Template Analyzer",
+        "min_confidence": 0.9804962277412415
+      }
+    ]
+  },
+  "t5-q5": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Device discovery",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Enable EDR in block mode",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Live Response for Servers",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "A device tag",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "A device value",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "The Automation level",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 428,
+        "rect": [
+          960,
+          1793,
+          1307,
+          1841
+        ],
+        "text": "Live Response for Servers",
+        "min_confidence": 0.9581823945045471
+      },
+      {
+        "page": 428,
+        "rect": [
+          960,
+          1981,
+          1305,
+          2033
+        ],
+        "text": "The Automation level",
+        "min_confidence": 0.9659902453422546
+      }
+    ]
+  },
+  "t5-q11": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "-FilterHashtable",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "-FilterXml",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "-FilterXPath",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 434,
+        "rect": [
+          678,
+          1864,
+          812,
+          1902
+        ],
+        "text": "-FilterXPath",
+        "min_confidence": 0.959744393825531
+      }
+    ]
+  },
+  "t5-q18": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Host1willblocktheexecutionofa filethathas theSHA-1hashvalueof",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "[T] Host2willblockandremediate a filethathas theSHA-256hashvalueof 88d4266fd4e6338d13b845fcf289579d209c897823b9217da3e161936f031589.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "en": "Host3 will block theexecution ofa file that has theSHA-256 hashvalue of",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "yes",
+      "no",
+      "yes"
+    ],
+    "evidence": [
+      {
+        "page": 442,
+        "rect": [
+          1278,
+          121,
+          1320,
+          161
+        ],
+        "text": "yes",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      },
+      {
+        "page": 442,
+        "rect": [
+          1449,
+          209,
+          1488,
+          248
+        ],
+        "text": "no",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      },
+      {
+        "page": 442,
+        "rect": [
+          1282,
+          293,
+          1317,
+          331
+        ],
+        "text": "yes",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      }
+    ]
+  },
+  "t5-q22": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "BIN",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "EXE",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "LNK",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 448,
+        "rect": [
+          603,
+          1795,
+          684,
+          1838
+        ],
+        "text": "BIN",
+        "min_confidence": 0.9987347722053528
+      }
+    ]
+  },
+  "t5-q25": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Microsoft 365 admin center",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Microsoft Defender portal",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Microsoft Entra admin center",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "Microsoft Intune admin center",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 451,
+        "rect": [
+          591,
+          2057,
+          959,
+          2112
+        ],
+        "text": "Microsoft Entra admin center",
+        "min_confidence": 0.9869192838668823
+      }
+    ]
+  },
+  "t5-q26": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "EXE and XLSX only",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "XLSX and PDF only",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "EXE,XLSX, and PDF",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "The Active Directory user",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "The active user",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "The local user",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "The planted cached user",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 454,
+        "rect": [
+          706,
+          127,
+          993,
+          182
+        ],
+        "text": "XLSX and PDF only",
+        "min_confidence": 0.9400942325592041
+      },
+      {
+        "page": 454,
+        "rect": [
+          706,
+          270,
+          1093,
+          326
+        ],
+        "text": "The Active Directory user",
+        "min_confidence": 0.9458402991294861
+      }
+    ]
+  },
+  "t6-q2": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Comments",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Tags",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Tasks",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Automated response",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Incident settings",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Set rule logic",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 459,
+        "rect": [
+          958,
+          1928,
+          1302,
+          1971
+        ],
+        "text": "Tasks",
+        "min_confidence": 0.998747706413269
+      },
+      {
+        "page": 459,
+        "rect": [
+          963,
+          2039,
+          1307,
+          2090
+        ],
+        "text": "Automated response",
+        "min_confidence": 0.9889843463897705
+      }
+    ]
+  },
+  "t6-q6": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "AzureActivity",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "MicrosoftGraphActivityLogs",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "UserRiskEvents",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "(parse_path(SourceSystem))",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "(parse_url(RequestUri).Path)",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "(parse_xml(ATContent))",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 464,
+        "rect": [
+          162,
+          1559,
+          469,
+          1589
+        ],
+        "text": "MicrosoftGraphActivityLogs",
+        "min_confidence": 0.9625914692878723
+      },
+      {
+        "page": 464,
+        "rect": [
+          884,
+          1708,
+          1190,
+          1739
+        ],
+        "text": "(parse_url(RequestUri).Path)",
+        "min_confidence": 0.941407322883606
+      }
+    ]
+  },
+  "t6-q7": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "analyze",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "getfile",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "library",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "processes",
+            "zh": ""
+          },
+          {
+            "id": "5",
+            "en": "putfile",
+            "zh": ""
+          },
+          {
+            "id": "6",
+            "en": "registry",
+            "zh": ""
+          },
+          {
+            "id": "7",
+            "en": "remediate",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "analyze",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "getfile",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "library",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "processes",
+            "zh": ""
+          },
+          {
+            "id": "5",
+            "en": "putfile",
+            "zh": ""
+          },
+          {
+            "id": "6",
+            "en": "registry",
+            "zh": ""
+          },
+          {
+            "id": "7",
+            "en": "remediate",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "7",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 466,
+        "rect": [
+          828,
+          384,
+          1018,
+          436
+        ],
+        "text": "remediate",
+        "min_confidence": 0.9993441700935364
+      },
+      {
+        "page": 466,
+        "rect": [
+          831,
+          500,
+          986,
+          556
+        ],
+        "text": "analyze",
+        "min_confidence": 0.9985605478286743
+      }
+    ]
+  },
+  "t6-q8": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Action type",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Entities",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Event entities graph",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 468,
+        "rect": [
+          955,
+          359,
+          1262,
+          426
+        ],
+        "text": "Event entities graph",
+        "min_confidence": 0.9911496043205261
+      }
+    ]
+  },
+  "t6-q10": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "$",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "&",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "collect",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "getfile",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "library",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "putfile",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "4"
+    ],
+    "evidence": [
+      {
+        "page": 470,
+        "rect": [
+          823,
+          1653,
+          978,
+          1705
+        ],
+        "text": "&",
+        "min_confidence": 0.864793598651886
+      },
+      {
+        "page": 470,
+        "rect": [
+          380,
+          1752,
+          601,
+          1797
+        ],
+        "text": "putfile",
+        "min_confidence": 0.9788094162940979
+      }
+    ]
+  },
+  "t6-q14": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Prefetch files",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Scheduled tasks",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Services",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 475,
+        "rect": [
+          990,
+          410,
+          1183,
+          451
+        ],
+        "text": "Prefetch files",
+        "min_confidence": 0.9718509912490845
+      }
+    ]
+  },
+  "t6-q20": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "fileinfo",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "jobs",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 481,
+        "rect": [
+          915,
+          1875,
+          1048,
+          1933
+        ],
+        "text": "fileinfo",
+        "min_confidence": 0.9969717264175415
+      }
+    ]
+  },
+  "t6-q23": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Device1 will block connections from Device4.",
+        "zh": "",
+        "options": [
+          {
+            "id": "yes",
+            "en": "Yes",
+            "zh": "是"
+          },
+          {
+            "id": "no",
+            "en": "No",
+            "zh": "否"
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "yes"
+    ],
+    "evidence": [
+      {
+        "page": 486,
+        "rect": [
+          1193,
+          2213,
+          1234,
+          2252
+        ],
+        "text": "yes",
+        "min_confidence": 0.99,
+        "method": "radio-column"
+      }
+    ]
+  },
+  "t6-q24": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "analyze",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "getfile",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "library",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "putfile",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "analyze",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "library",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "remediate",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 488,
+        "rect": [
+          919,
+          2006,
+          1130,
+          2046
+        ],
+        "text": "getfile",
+        "min_confidence": 0.9970830082893372
+      },
+      {
+        "page": 488,
+        "rect": [
+          919,
+          2228,
+          1132,
+          2260
+        ],
+        "text": "remediate",
+        "min_confidence": 0.9978604912757874
+      }
+    ]
+  },
+  "t6-q26": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "When alert is created",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "When incident is created",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "When incident is updated",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Add task",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Change status",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Run playbook",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 491,
+        "rect": [
+          645,
+          1724,
+          1013,
+          1757
+        ],
+        "text": "When incident is updated",
+        "min_confidence": 0.9673817753791809
+      },
+      {
+        "page": 491,
+        "rect": [
+          645,
+          1866,
+          1014,
+          1897
+        ],
+        "text": "Run playbook",
+        "min_confidence": 0.9944177269935608
+      }
+    ]
+  },
+  "t6-q33": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Loqic App Operator",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Microsoft Sentinel Automation Contributor",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "LApp1",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "RG1",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "RG2",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "Sub1",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 499,
+        "rect": [
+          578,
+          2203,
+          1129,
+          2259
+        ],
+        "text": "Microsoft Sentinel Automation Contributor",
+        "min_confidence": 0.9695404767990112
+      },
+      {
+        "page": 500,
+        "rect": [
+          581,
+          146,
+          691,
+          196
+        ],
+        "text": "LApp1",
+        "min_confidence": 0.9854008555412292
+      }
+    ]
+  },
+  "t6-q41": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "(\"204\")",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "(\"401\")",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 511,
+        "rect": [
+          713,
+          1858,
+          796,
+          1899
+        ],
+        "text": "(\"204\")",
+        "min_confidence": 0.9561029076576233
+      }
+    ]
+  },
+  "t7-q1": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "ASimAuthentication (",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "laenutyinio",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "imAuthentication (",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "ASimAuthentication ( laenutyinio",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "4"
+    ],
+    "evidence": [
+      {
+        "page": 521,
+        "rect": [
+          381,
+          1908,
+          570,
+          1944
+        ],
+        "text": "ASimAuthentication ( laenutyinio",
+        "min_confidence": 0.7697255611419678
+      }
+    ]
+  },
+  "t7-q5": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "RequestUri",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Scopes",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Type",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "[\"GET\"",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "\"POST\"",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "\"PUT\"",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 525,
+        "rect": [
+          533,
+          1755,
+          722,
+          1821
+        ],
+        "text": "RequestUri",
+        "min_confidence": 0.9971544146537781
+      },
+      {
+        "page": 525,
+        "rect": [
+          826,
+          1969,
+          947,
+          2017
+        ],
+        "text": "[\"GET\"",
+        "min_confidence": 0.8355931639671326
+      }
+    ]
+  },
+  "t7-q9": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "full",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "iner",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "left",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "right",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 533,
+        "rect": [
+          885,
+          141,
+          976,
+          179
+        ],
+        "text": "iner",
+        "min_confidence": 0.8372679948806763
+      }
+    ]
+  },
+  "t7-q12": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Reportid",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Reportid TimeGenerated",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 536,
+        "rect": [
+          958,
+          1550,
+          1031,
+          1575
+        ],
+        "text": "Reportid TimeGenerated",
+        "min_confidence": 0.8770264983177185
+      }
+    ]
+  },
+  "t7-q13": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "|summarize arg_max(TimeGenerated, *) by Account",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "|summarize make_list(Account) by EventID",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "|summarize make_set(Account) by EventID",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "|where EventID == 4624",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "|summarize arg_max(TimeGenerated, *) by Account",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "|summarize make_list(Account) by EventID",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "|summarize make_set(Account) by EventID",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "|where EventID == 4624",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "4",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 537,
+        "rect": [
+          577,
+          1907,
+          1282,
+          1954
+        ],
+        "text": "|where EventID == 4624",
+        "min_confidence": 0.9465059041976929
+      },
+      {
+        "page": 537,
+        "rect": [
+          577,
+          2029,
+          1279,
+          2079
+        ],
+        "text": "|summarize arg_max(TimeGenerated, *) by Account",
+        "min_confidence": 0.96351158618927
+      }
+    ]
+  },
+  "t7-q26": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "ACCOUnLSIU",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "AccountUpn",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 554,
+        "rect": [
+          898,
+          93,
+          1040,
+          131
+        ],
+        "text": "AccountUpn",
+        "min_confidence": 0.9457230567932129
+      }
+    ]
+  },
+  "t7-q27": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "DeviceFvents",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "DeviceFileEvents",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Devicelnfo",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "extend",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "project-keep",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "project-away",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "render",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 556,
+        "rect": [
+          376,
+          260,
+          575,
+          306
+        ],
+        "text": "DeviceFileEvents",
+        "min_confidence": 0.9841010570526123
+      },
+      {
+        "page": 556,
+        "rect": [
+          381,
+          509,
+          535,
+          557
+        ],
+        "text": "project-keep",
+        "min_confidence": 0.9855441451072693
+      }
+    ]
+  },
+  "t7-q30": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Graph",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Grid",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Text",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 559,
+        "rect": [
+          670,
+          2051,
+          756,
+          2094
+        ],
+        "text": "Grid",
+        "min_confidence": 0.9980494976043701
+      }
+    ]
+  },
+  "t7-q34": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "MicrosoftGraphActivityLogs",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "SecurityEvent",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 565,
+        "rect": [
+          381,
+          1858,
+          661,
+          1898
+        ],
+        "text": "MicrosoftGraphActivityLogs",
+        "min_confidence": 0.9638291597366333
+      }
+    ]
+  },
+  "t7-q39": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "FileOriginUrl",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "FilePath",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "SHA256",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Innerunique",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "rightouter",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 571,
+        "rect": [
+          1180,
+          2117,
+          1302,
+          2151
+        ],
+        "text": "FileOriginUrl",
+        "min_confidence": 0.9792312383651733
+      },
+      {
+        "page": 571,
+        "rect": [
+          513,
+          2138,
+          625,
+          2170
+        ],
+        "text": "Innerunique",
+        "min_confidence": 0.9529685974121094
+      }
+    ]
+  },
+  "t10-q1": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "A new Log Analytics workspace in the East US Azure region",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Default workspace created by Azure Security Center",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "LA1",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "All Events",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Common",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Minimal",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 589,
+        "rect": [
+          603,
+          1894,
+          1351,
+          1924
+        ],
+        "text": "LA1",
+        "min_confidence": 0.9980137944221497
+      },
+      {
+        "page": 589,
+        "rect": [
+          605,
+          2018,
+          828,
+          2056
+        ],
+        "text": "Common",
+        "min_confidence": 0.9968907237052917
+      }
+    ]
+  },
+  "t11-q1": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Add resource locks to the key vault.",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Modify the access policy settings for thekeyvault.",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Create a new access policy for thekeyvault.",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Implement Azure Firewall.",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "ModifytheKeyVaultfirewall settings.",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Modify the network security groups (NSGs).",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 593,
+        "rect": [
+          603,
+          673,
+          1403,
+          715
+        ],
+        "text": "Modify the access policy settings for thekeyvault.",
+        "min_confidence": 0.9130060076713562
+      },
+      {
+        "page": 593,
+        "rect": [
+          606,
+          864,
+          1296,
+          907
+        ],
+        "text": "ModifytheKeyVaultfirewall settings.",
+        "min_confidence": 0.9367848038673401
+      }
+    ]
+  },
+  "t12-q3": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "CloudAppEvents",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "DeviceFileEvents",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "DeviceProcessEvents",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "DeviceFileEvents DeviceProcessEvents",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "avg()",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "count()",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "sum()",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "4",
+      "2"
+    ],
+    "evidence": [
+      {
+        "page": 599,
+        "rect": [
+          387,
+          1426,
+          699,
+          1486
+        ],
+        "text": "DeviceFileEvents DeviceProcessEvents",
+        "min_confidence": 0.9826067090034485
+      },
+      {
+        "page": 599,
+        "rect": [
+          918,
+          1636,
+          1078,
+          1675
+        ],
+        "text": "count()",
+        "min_confidence": 0.9543598890304565
+      }
+    ]
+  },
+  "t12-q4": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "0",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "1",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "2",
+            "zh": ""
+          },
+          {
+            "id": "4",
+            "en": "3",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "extend",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "project",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "workspace",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "2",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 600,
+        "rect": [
+          1128,
+          1633,
+          1398,
+          1674
+        ],
+        "text": "1",
+        "min_confidence": 0.9995749592781067
+      },
+      {
+        "page": 600,
+        "rect": [
+          1130,
+          1913,
+          1400,
+          1953
+        ],
+        "text": "workspace",
+        "min_confidence": 0.9979718327522278
+      }
+    ]
+  },
+  "t13-q3": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "crerrei",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Configure app connectors",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Configure log collectors",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Add a data connector",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Add a workbook",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Configure the Logs settings",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "1",
+      "1"
+    ],
+    "evidence": [
+      {
+        "page": 607,
+        "rect": [
+          956,
+          1865,
+          1466,
+          1906
+        ],
+        "text": "crerrei",
+        "min_confidence": 0.17697937786579132
+      },
+      {
+        "page": 607,
+        "rect": [
+          958,
+          2062,
+          1468,
+          2101
+        ],
+        "text": "Add a data connector",
+        "min_confidence": 0.9742067456245422
+      }
+    ]
+  },
+  "t13-q6": {
+    "slots": [
+      {
+        "id": "1",
+        "en": "Answer area 1 (top to bottom)",
+        "zh": "第 1 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Fusion",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "Microsoft incident creation",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "Scheduled",
+            "zh": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "en": "Answer area 2 (top to bottom)",
+        "zh": "第 2 个答题区域（从上到下）",
+        "options": [
+          {
+            "id": "1",
+            "en": "Diagnostics settings",
+            "zh": ""
+          },
+          {
+            "id": "2",
+            "en": "A service principal",
+            "zh": ""
+          },
+          {
+            "id": "3",
+            "en": "A trigger",
+            "zh": ""
+          }
+        ]
+      }
+    ],
+    "answer": [
+      "3",
+      "3"
+    ],
+    "evidence": [
+      {
+        "page": 611,
+        "rect": [
+          871,
+          2016,
+          1338,
+          2055
+        ],
+        "text": "Scheduled",
+        "min_confidence": 0.998056173324585
+      },
+      {
+        "page": 611,
+        "rect": [
+          871,
+          2209,
+          1338,
+          2248
+        ],
+        "text": "A trigger",
+        "min_confidence": 0.9530290961265564
+      }
+    ]
+  }
+}
