@@ -80,6 +80,36 @@ class Mistake(Base):
     count: Mapped[int] = mapped_column(Integer, default=1)
     mastered: Mapped[int] = mapped_column(Integer, default=0)
     updated: Mapped[float] = mapped_column(Float)
+    due_at: Mapped[float | None] = mapped_column(Float, nullable=True)
+    review_stage: Mapped[int] = mapped_column(Integer, default=0)
+    last_reviewed: Mapped[float | None] = mapped_column(Float, nullable=True)
+    schedule_updated: Mapped[float] = mapped_column(Float, default=0)
+    imported_wrong_sources: Mapped[list] = mapped_column(JSON, default=list)
+
+
+class PersonalQuestion(Base):
+    __tablename__ = "personal_questions"
+    __table_args__ = (UniqueConstraint("user_id", "question_id"),)
+    id: Mapped[str] = mapped_column(String, primary_key=True)
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    question_id: Mapped[str] = mapped_column(String)
+    favorite: Mapped[int] = mapped_column(Integer, default=0)
+    note: Mapped[str] = mapped_column(Text, default="")
+    updated: Mapped[float] = mapped_column(Float)
+    version: Mapped[int] = mapped_column(Integer, default=1)
+
+
+class QuestionReport(Base):
+    __tablename__ = "question_reports"
+    id: Mapped[str] = mapped_column(String, primary_key=True)
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    source_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    question_id: Mapped[str] = mapped_column(String)
+    category: Mapped[str] = mapped_column(String)
+    content: Mapped[str] = mapped_column(Text)
+    status: Mapped[str] = mapped_column(String, default="open")
+    created: Mapped[float] = mapped_column(Float)
+    updated: Mapped[float] = mapped_column(Float)
 
 
 class Activity(Base):

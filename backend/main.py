@@ -10,7 +10,7 @@ import time
 import uuid
 from collections import Counter, defaultdict
 from contextlib import asynccontextmanager
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Literal
 from zoneinfo import ZoneInfo
@@ -18,15 +18,27 @@ from zoneinfo import ZoneInfo
 from alembic.config import Config
 from argon2 import PasswordHasher
 from argon2.exceptions import VerificationError
-from fastapi import Depends, FastAPI, HTTPException, Request, Response
+from fastapi import Depends, FastAPI, HTTPException, Query, Request, Response
 from fastapi.responses import FileResponse, JSONResponse
-from pydantic import BaseModel, Field
-from sqlalchemy import delete, select, text
+from pydantic import BaseModel, ConfigDict, Field, model_validator
+from sqlalchemy import delete, or_, select, text
 
 from alembic import command
 
 from .bank import bank, grade, public_question, question_map
-from .db import DATA, ROOT, Activity, Attempt, Exam, Login, Mistake, SessionLocal, User
+from .db import (
+    DATA,
+    ROOT,
+    Activity,
+    Attempt,
+    Exam,
+    Login,
+    Mistake,
+    PersonalQuestion,
+    QuestionReport,
+    SessionLocal,
+    User,
+)
 
 hasher = PasswordHasher()
 
@@ -94,18 +106,44 @@ def record(db, e, q, at=None):
         answer=answer,
     )
     db.add(a)
+    m = db.scalar(select(Mistake).where(Mistake.user_id == e.user_id, Mistake.question_id == q["id"]))
     if not a.correct:
-        m = db.scalar(select(Mistake).where(Mistake.user_id == e.user_id, Mistake.question_id == q["id"]))
         if m:
-            m.count += 1
-            m.mastered = 0
-            m.updated = a.created
+            source = f"{e.state.get('source_id', e.id)}:{q['id']}"
+            if source in m.imported_wrong_sources:
+                m.imported_wrong_sources = [value for value in m.imported_wrong_sources if value != source]
+            else:
+                m.count += 1
+            m.updated = max(m.updated, a.created)
+            # Importing older attempts must not undo more recent review progress.
+            if a.created >= m.schedule_updated:
+                m.mastered = 0
+                m.review_stage = 0
+                m.due_at = a.created
+                m.last_reviewed = a.created
+                m.schedule_updated = a.created
         else:
             db.add(
                 Mistake(
-                    id=uid(), user_id=e.user_id, question_id=q["id"], count=1, mastered=0, updated=a.created
+                    id=uid(),
+                    user_id=e.user_id,
+                    question_id=q["id"],
+                    count=1,
+                    mastered=0,
+                    updated=a.created,
+                    due_at=a.created,
+                    review_stage=0,
+                    last_reviewed=None,
+                    schedule_updated=a.created,
                 )
             )
+    elif m and not m.mastered and a.created >= m.schedule_updated:
+        m.last_reviewed = a.created
+        m.schedule_updated = a.created
+        if m.due_at is None or m.due_at <= a.created:
+            intervals = (1, 3, 7, 14, 30)
+            m.review_stage = min(m.review_stage + 1, len(intervals))
+            m.due_at = a.created + intervals[m.review_stage - 1] * 86400
     db.flush()
     return a
 
@@ -328,11 +366,13 @@ def review_asset(question_id: str, filename: str, u=Depends(viewer)):
 
 
 class NewExam(BaseModel):
-    mode: Literal["exam", "random", "topic", "wrong"] = "random"
+    mode: Literal["exam", "random", "topic", "wrong", "favorite"] = "random"
     count: int = Field(default=10, ge=1, le=100)
     topic: int | None = None
     tag: str | None = None
     feedback: bool = True
+    question_ids: list[str] | None = Field(default=None, min_length=1, max_length=100)
+    due_only: bool = False
 
 
 @app.post("/api/v1/sessions", status_code=201)
@@ -344,11 +384,35 @@ def create_exam(body: NewExam, u=Depends(viewer), db=Depends(transaction)):
         qs = [q for q in qs if q["topic"] == body.topic]
     if body.tag:
         qs = [q for q in qs if body.tag in q["tags"]]
+    if body.question_ids is not None and body.mode not in ("wrong", "favorite"):
+        error("只有错题和收藏练习支持指定题目")
+    if body.due_only and body.mode != "wrong":
+        error("到期筛选仅支持错题练习")
     if body.mode == "wrong":
-        wrong = set(
-            db.scalars(select(Mistake.question_id).where(Mistake.user_id == u.id, Mistake.mastered == 0))
+        conditions = [Mistake.user_id == u.id]
+        if body.question_ids is None or body.due_only:
+            conditions.append(Mistake.mastered == 0)
+        if body.due_only:
+            conditions.append(or_(Mistake.due_at.is_(None), Mistake.due_at <= now()))
+        permitted = set(db.scalars(select(Mistake.question_id).where(*conditions)))
+        qs = [q for q in qs if q["id"] in permitted]
+    elif body.mode == "favorite":
+        permitted = set(
+            db.scalars(
+                select(PersonalQuestion.question_id).where(
+                    PersonalQuestion.user_id == u.id, PersonalQuestion.favorite == 1
+                )
+            )
         )
-        qs = [q for q in qs if q["id"] in wrong]
+        qs = [q for q in qs if q["id"] in permitted]
+    if body.question_ids is not None:
+        requested = list(dict.fromkeys(body.question_ids))
+        available = {q["id"]: q for q in qs}
+        if any(qid not in available for qid in requested):
+            error("所选题目不可用，或不属于你的错题/收藏范围")
+        if body.count > len(requested):
+            error(f"已选 {len(requested)} 道题，请调整题量；不会自动补充其他题目")
+        qs = [available[qid] for qid in requested]
     if len(qs) < body.count:
         error(f"当前可用题目 {len(qs)} 道，请调整题量或筛选条件")
     rng = random.SystemRandom()
@@ -563,19 +627,84 @@ def stats(u=Depends(viewer), db=Depends(transaction)):
 
 
 @app.get("/api/v1/mistakes")
-def mistakes(u=Depends(viewer), db=Depends(transaction)):
+def mistakes(
+    state: Literal["pending", "mastered", "all", "due"] = "all",
+    topic: int | None = None,
+    tag: str | None = None,
+    min_count: int = Query(default=1, ge=1),
+    sort: Literal["recent", "frequent", "due"] = "recent",
+    q: str = Query(default="", max_length=200),
+    last_days: int | None = Query(default=None, ge=1, le=3650),
+    u=Depends(viewer),
+    db=Depends(transaction),
+):
     qs = question_map()
-    return [
-        dict(
-            id=m.question_id,
-            count=m.count,
-            mastered=bool(m.mastered),
-            updated=m.updated,
-            question=public_question(qs[m.question_id], True),
+    conditions = [Mistake.user_id == u.id, Mistake.count >= min_count]
+    if state in ("pending", "due"):
+        conditions.append(Mistake.mastered == 0)
+    elif state == "mastered":
+        conditions.append(Mistake.mastered == 1)
+    if state == "due":
+        conditions.append(or_(Mistake.due_at.is_(None), Mistake.due_at <= now()))
+    if last_days is not None:
+        conditions.append(Mistake.updated >= now() - last_days * 86400)
+    ordering = {
+        "recent": [Mistake.updated.desc(), Mistake.question_id],
+        "frequent": [Mistake.count.desc(), Mistake.updated.desc(), Mistake.question_id],
+        "due": [Mistake.mastered, Mistake.due_at.asc(), Mistake.updated.desc(), Mistake.question_id],
+    }[sort]
+    result = []
+    for m in db.scalars(select(Mistake).where(*conditions).order_by(*ordering)):
+        question = qs.get(m.question_id)
+        if not question or (topic is not None and question["topic"] != topic):
+            continue
+        if tag and tag not in question.get("tags", []):
+            continue
+        if (
+            q.strip()
+            and q.strip().casefold()
+            not in " ".join(
+                [
+                    question["id"],
+                    question.get("en") or "",
+                    question.get("zh") or "",
+                    *question.get("tags", []),
+                ]
+            ).casefold()
+        ):
+            continue
+        result.append(
+            dict(
+                id=m.question_id,
+                count=m.count,
+                mastered=bool(m.mastered),
+                updated=m.updated,
+                due_at=m.due_at,
+                review_stage=m.review_stage,
+                last_reviewed=m.last_reviewed,
+                question=public_question(question, True),
+            )
         )
-        for m in db.scalars(select(Mistake).where(Mistake.user_id == u.id).order_by(Mistake.updated.desc()))
-        if m.question_id in qs
-    ]
+    return result
+
+
+@app.get("/api/v1/mistakes/{question_id}/assets/{filename}")
+def mistake_asset(question_id: str, filename: str, u=Depends(viewer), db=Depends(transaction)):
+    item = db.scalar(select(Mistake).where(Mistake.user_id == u.id, Mistake.question_id == question_id))
+    question = question_map().get(question_id)
+    if not item or not question:
+        error("错题图片不存在", 404)
+    permitted = set(
+        question.get("assets", []) + question.get("case_assets", []) + question.get("answer_assets", [])
+    )
+    if filename not in permitted or Path(filename).name != filename:
+        error("错题图片不存在", 404)
+    path = DATA / "assets" / filename
+    if not path.is_file():
+        path = ROOT / "data/assets" / filename
+    if not path.is_file():
+        error("图片不存在", 404)
+    return FileResponse(path)
 
 
 class Mastery(BaseModel):
@@ -587,8 +716,214 @@ def mastery(question_id: str, body: Mastery, u=Depends(viewer), db=Depends(trans
     m = db.scalar(select(Mistake).where(Mistake.user_id == u.id, Mistake.question_id == question_id))
     if not m:
         error("错题不存在", 404)
-    m.mastered = int(body.mastered)
+    if bool(m.mastered) != body.mastered:
+        m.mastered = int(body.mastered)
+        m.schedule_updated = now()
+        m.due_at = None if body.mastered else m.schedule_updated
+        if not body.mastered:
+            m.review_stage = 0
     return {"ok": True}
+
+
+@app.get("/api/v1/review/summary")
+def review_summary(u=Depends(viewer), db=Depends(transaction)):
+    rows = list(db.scalars(select(Mistake).where(Mistake.user_id == u.id)))
+    due = sum(not m.mastered and (m.due_at is None or m.due_at <= now()) for m in rows)
+    pending = sum(not m.mastered for m in rows)
+    qs = question_map()
+    recent = defaultdict(list)
+    tags = defaultdict(lambda: defaultdict(list))
+    for a in db.scalars(select(Attempt).where(Attempt.user_id == u.id).order_by(Attempt.created)):
+        if a.created >= now() - 30 * 86400:
+            recent[a.topic].append(a.correct)
+        local_date = datetime.fromtimestamp(a.created, ZoneInfo(u.timezone)).date()
+        week = (local_date - timedelta(days=local_date.weekday())).isoformat()
+        for tag in qs.get(a.question_id, {}).get("tags", []):
+            tags[tag][week].append(a.correct)
+    recommendations = [
+        dict(
+            topic=topic,
+            attempts=len(results),
+            accuracy=round(sum(results) / len(results) * 100, 1),
+            ready_count=sum(q["topic"] == topic and q["status"] == "ready" for q in qs.values()),
+        )
+        for topic, results in recent.items()
+        if len(results) >= 3
+    ]
+    recommendations.sort(key=lambda r: (r["accuracy"], -r["attempts"], r["topic"]))
+    knowledge = []
+    for tag, weeks in sorted(tags.items()):
+        trend = [
+            dict(week=week, accuracy=round(sum(results) / len(results) * 100, 1), count=len(results))
+            for week, results in sorted(weeks.items())
+        ]
+        correct = sum(sum(results) for results in weeks.values())
+        count = sum(len(results) for results in weeks.values())
+        knowledge.append(
+            dict(
+                tag=tag,
+                count=count,
+                correct=correct,
+                accuracy=round(correct / count * 100, 1),
+                previous_accuracy=trend[-2]["accuracy"] if len(trend) > 1 else None,
+                trend=trend,
+            )
+        )
+    return dict(
+        due_count=due,
+        pending_count=pending,
+        scheduled_count=pending - due,
+        mastered_count=len(rows) - pending,
+        recommendations=recommendations,
+        knowledge=knowledge,
+    )
+
+
+def checked_question(question_id):
+    question = question_map().get(question_id)
+    if not question:
+        error("题目不存在", 404)
+    return question
+
+
+def personal_out(question_id, item):
+    return dict(
+        question_id=question_id,
+        favorite=bool(item.favorite) if item else False,
+        note=item.note if item else "",
+        updated=item.updated if item else None,
+        version=item.version if item else 0,
+    )
+
+
+@app.get("/api/v1/questions/{question_id}/personal")
+def personal(question_id: str, u=Depends(viewer), db=Depends(transaction)):
+    checked_question(question_id)
+    item = db.scalar(
+        select(PersonalQuestion).where(
+            PersonalQuestion.user_id == u.id, PersonalQuestion.question_id == question_id
+        )
+    )
+    return personal_out(question_id, item)
+
+
+class PersonalIn(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    favorite: bool | None = None
+    note: str | None = Field(default=None, max_length=10000)
+    version: int = Field(ge=0)
+
+    @model_validator(mode="after")
+    def valid_patch(self):
+        updates = self.model_fields_set - {"version"}
+        if not updates or any(getattr(self, key) is None for key in updates):
+            raise ValueError("请提供收藏状态或笔记内容")
+        return self
+
+
+@app.patch("/api/v1/questions/{question_id}/personal")
+def update_personal(question_id: str, body: PersonalIn, u=Depends(viewer), db=Depends(transaction)):
+    checked_question(question_id)
+    item = db.scalar(
+        select(PersonalQuestion).where(
+            PersonalQuestion.user_id == u.id, PersonalQuestion.question_id == question_id
+        )
+    )
+    if body.version != (item.version if item else 0):
+        error("笔记或收藏已在其他页面更新，请重新读取后保存", 409)
+    if item is None:
+        item = PersonalQuestion(
+            id=uid(), user_id=u.id, question_id=question_id, favorite=0, note="", updated=now(), version=0
+        )
+        db.add(item)
+    if body.favorite is not None:
+        item.favorite = int(body.favorite)
+    if body.note is not None:
+        item.note = body.note
+    item.updated = now()
+    item.version += 1
+    db.flush()
+    return personal_out(question_id, item)
+
+
+@app.get("/api/v1/library")
+def library(u=Depends(viewer), db=Depends(transaction)):
+    qs = question_map()
+    return [
+        dict(question=public_question(qs[item.question_id]), **personal_out(item.question_id, item))
+        for item in db.scalars(
+            select(PersonalQuestion)
+            .where(
+                PersonalQuestion.user_id == u.id,
+                or_(PersonalQuestion.favorite == 1, PersonalQuestion.note != ""),
+            )
+            .order_by(PersonalQuestion.updated.desc(), PersonalQuestion.question_id)
+        )
+        if item.question_id in qs
+    ]
+
+
+def report_out(item):
+    return dict(
+        id=item.id,
+        question_id=item.question_id,
+        category=item.category,
+        content=item.content,
+        status=item.status,
+        created=item.created,
+    )
+
+
+class ReportIn(BaseModel):
+    model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
+    category: Literal["translation", "answer", "image", "other"]
+    content: str = Field(min_length=5, max_length=3000)
+
+
+@app.post("/api/v1/questions/{question_id}/reports", status_code=201)
+def create_report(question_id: str, body: ReportIn, u=Depends(viewer), db=Depends(transaction)):
+    checked_question(question_id)
+    item = QuestionReport(
+        id=uid(),
+        user_id=u.id,
+        question_id=question_id,
+        category=body.category,
+        content=body.content,
+        status="open",
+        created=now(),
+        updated=now(),
+    )
+    db.add(item)
+    db.flush()
+    return report_out(item)
+
+
+@app.get("/api/v1/reports")
+def reports(u=Depends(viewer), db=Depends(transaction)):
+    return [
+        report_out(item)
+        for item in db.scalars(
+            select(QuestionReport)
+            .where(QuestionReport.user_id == u.id)
+            .order_by(QuestionReport.created.desc(), QuestionReport.id)
+        )
+    ]
+
+
+class ReportStatus(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    status: Literal["withdrawn"]
+
+
+@app.patch("/api/v1/reports/{report_id}")
+def withdraw_report(report_id: str, body: ReportStatus, u=Depends(viewer), db=Depends(transaction)):
+    item = db.get(QuestionReport, report_id)
+    if not item or item.user_id != u.id:
+        error("反馈不存在", 404)
+    if item.status != body.status:
+        item.status = body.status
+        item.updated = now()
+    return report_out(item)
 
 
 @app.get("/api/v1/sessions/{exam_id}/assets/{filename}")
@@ -612,21 +947,35 @@ def asset(exam_id: str, filename: str, u=Depends(viewer), db=Depends(transaction
     return FileResponse(path)
 
 
+def recorded_wrong_sources(db, user_id):
+    exams = {e.id: e for e in db.scalars(select(Exam).where(Exam.user_id == user_id))}
+    sources = defaultdict(set)
+    for a in db.scalars(select(Attempt).where(Attempt.user_id == user_id, Attempt.correct == 0)):
+        e = exams[a.exam_id]
+        sources[a.question_id].add(f"{e.state.get('source_id', e.id)}:{a.question_id}")
+    return sources
+
+
 @app.get("/api/v1/export")
 def export(u=Depends(viewer), db=Depends(transaction)):
     rows = list(db.scalars(select(Exam).where(Exam.user_id == u.id, Exam.finished.is_not(None))))
+    submissions = defaultdict(dict)
+    for a in db.scalars(select(Attempt).where(Attempt.user_id == u.id)):
+        submissions[a.exam_id][a.question_id] = a.created
+    wrong_sources = recorded_wrong_sources(db, u.id)
     payload = dict(
-        schema_version=1,
+        schema_version=2,
         bank_version=bank()["version"],
         exported_at=now(),
         sessions=[
             dict(
-                id=e.id,
+                id=e.state.get("source_id", e.id),
                 mode=e.mode,
                 started=e.started,
                 finished=e.finished,
                 question_ids=[q["id"] for q in e.state["questions"]],
                 answers=e.state["answers"],
+                submitted_at=submissions[e.id],
                 seconds=e.state.get("seconds", 0),
             )
             for e in rows
@@ -634,6 +983,28 @@ def export(u=Depends(viewer), db=Depends(transaction)):
         mastered=list(
             db.scalars(select(Mistake.question_id).where(Mistake.user_id == u.id, Mistake.mastered == 1))
         ),
+        review=[
+            dict(
+                question_id=m.question_id,
+                count=m.count,
+                mastered=bool(m.mastered),
+                updated=m.updated,
+                due_at=m.due_at,
+                review_stage=m.review_stage,
+                last_reviewed=m.last_reviewed,
+                schedule_updated=m.schedule_updated,
+                wrong_sources=sorted(wrong_sources[m.question_id] | set(m.imported_wrong_sources)),
+            )
+            for m in db.scalars(select(Mistake).where(Mistake.user_id == u.id))
+        ],
+        personal=[
+            personal_out(item.question_id, item)
+            for item in db.scalars(select(PersonalQuestion).where(PersonalQuestion.user_id == u.id))
+        ],
+        reports=[
+            dict(report_out(item), id=item.source_id or item.id, updated=item.updated)
+            for item in db.scalars(select(QuestionReport).where(QuestionReport.user_id == u.id))
+        ],
     )
     return Response(
         json.dumps(payload, ensure_ascii=False),
@@ -642,44 +1013,146 @@ def export(u=Depends(viewer), db=Depends(transaction)):
     )
 
 
-class ImportedSession(BaseModel):
-    id: str = Field(max_length=80)
-    mode: Literal["exam", "random", "topic", "wrong"]
+class BackupModel(BaseModel):
+    model_config = ConfigDict(extra="forbid", allow_inf_nan=False)
+
+
+class ImportedSession(BackupModel):
+    id: str = Field(min_length=1, max_length=80)
+    mode: Literal["exam", "random", "topic", "wrong", "favorite"]
     started: float = Field(gt=0)
     finished: float = Field(gt=0)
     question_ids: list[str] = Field(min_length=1, max_length=100)
-    answers: dict[str, list[str]]
+    answers: dict[str, list[str]] = Field(max_length=100)
+    submitted_at: dict[str, float] = Field(default_factory=dict, max_length=100)
     seconds: int = Field(default=0, ge=0, le=86400)
 
 
-class ImportIn(BaseModel):
-    schema_version: Literal[1]
+class ImportedPersonal(BackupModel):
+    question_id: str
+    favorite: bool
+    note: str = Field(max_length=10000)
+    updated: float = Field(gt=0)
+    version: int = Field(ge=1)
+
+
+class ImportedReview(BackupModel):
+    question_id: str
+    count: int = Field(ge=1, le=1000000)
+    mastered: bool
+    updated: float = Field(gt=0)
+    due_at: float | None = Field(default=None, gt=0)
+    review_stage: int = Field(ge=0, le=5)
+    last_reviewed: float | None = Field(default=None, gt=0)
+    schedule_updated: float = Field(gt=0)
+
+    wrong_sources: list[str] = Field(min_length=1, max_length=100000)
+
+
+class ImportedReport(BackupModel):
+    id: str = Field(min_length=1, max_length=80)
+    question_id: str
+    category: Literal["translation", "answer", "image", "other"]
+    content: str = Field(min_length=5, max_length=3000)
+    status: Literal["open", "withdrawn"]
+    created: float = Field(gt=0)
+    updated: float = Field(gt=0)
+
+
+class ImportIn(BackupModel):
+    schema_version: Literal[1, 2]
     bank_version: str
+    exported_at: float | None = Field(default=None, gt=0)
     sessions: list[ImportedSession] = Field(max_length=1000)
     mastered: list[str] = Field(default_factory=list, max_length=2000)
+    review: list[ImportedReview] = Field(default_factory=list, max_length=2000)
+    personal: list[ImportedPersonal] = Field(default_factory=list, max_length=2000)
+    reports: list[ImportedReport] = Field(default_factory=list, max_length=2000)
+
+    @model_validator(mode="after")
+    def valid_version(self):
+        if self.schema_version == 1 and (self.review or self.personal or self.reports):
+            raise ValueError("旧版备份不支持新增的个人资料字段")
+        return self
+
+
+def validate_backup(body, qs):
+    cutoff = now() + 60
+    if body.bank_version != bank()["version"]:
+        error("题库版本不同，请先使用匹配的题库再导入")
+    if body.exported_at is not None and body.exported_at > cutoff:
+        error("备份时间不合法")
+    # Validate every entry before deduplication so malformed backups never partially succeed.
+    for entries, key in (
+        (body.sessions, "id"),
+        (body.review, "question_id"),
+        (body.personal, "question_id"),
+        (body.reports, "id"),
+    ):
+        identifiers = [getattr(item, key) for item in entries]
+        if len(set(identifiers)) != len(identifiers):
+            error("备份包含重复记录")
+    for item in body.sessions:
+        ids = set(item.question_ids)
+        if len(ids) != len(item.question_ids) or any(q not in qs or qs[q]["status"] != "ready" for q in ids):
+            error("备份包含无效题目")
+        if set(item.answers) - ids or set(item.submitted_at) - ids:
+            error("备份包含不属于训练的答案记录")
+        if item.finished < item.started or item.finished > cutoff:
+            error("备份时间不合法")
+        for qid, value in item.submitted_at.items():
+            if not math.isfinite(value) or not item.started <= value <= item.finished:
+                error("备份提交时间不合法")
+        for qid in ids:
+            validate_answer(qs[qid], item.answers.get(qid, []))
+    if any(qid not in qs for qid in body.mastered):
+        error("备份包含无效题目")
+    for item in [*body.review, *body.personal, *body.reports]:
+        if item.question_id not in qs:
+            error("备份包含无效题目")
+        if item.updated > cutoff:
+            error("备份时间不合法")
+    for item in body.review:
+        if len(item.wrong_sources) != len(set(item.wrong_sources)) or item.count != len(item.wrong_sources):
+            error("错题次数与作答来源不一致")
+        if any(
+            len(source) > 200
+            or not source.endswith(":" + item.question_id)
+            or len(source) <= len(item.question_id) + 1
+            for source in item.wrong_sources
+        ):
+            error("错题作答来源不合法")
+        if qs[item.question_id]["status"] != "ready":
+            error("错题备份包含不可评分题目")
+        if item.schedule_updated > cutoff or (
+            item.last_reviewed is not None and item.last_reviewed > item.schedule_updated
+        ):
+            error("复习计划时间不合法")
+        if item.mastered and item.due_at is not None:
+            error("已掌握题目不能设置复习到期时间")
+        if not item.mastered and (
+            item.due_at is None or item.due_at > item.schedule_updated + 30 * 86400 + 60
+        ):
+            error("复习到期时间不合法")
+    for item in body.reports:
+        if item.created > item.updated or len(item.content.strip()) < 5:
+            error("反馈备份不合法")
 
 
 @app.post("/api/v1/import")
 def import_data(body: ImportIn, u=Depends(viewer), db=Depends(transaction)):
     qs = question_map()
+    validate_backup(body, qs)
     added = 0
-    if body.bank_version != bank()["version"]:
-        error("题库版本不同，请先使用匹配的题库再导入")
-    for item in body.sessions:
-        # Stable per-user import identity plus original identity for same-account backups.
+    local_schedules = {
+        m.question_id: m.schedule_updated for m in db.scalars(select(Mistake).where(Mistake.user_id == u.id))
+    }
+    for item in sorted(body.sessions, key=lambda item: item.finished):
         eid = uuid.uuid5(uuid.NAMESPACE_URL, u.id + ":" + item.id).hex
         original = db.get(Exam, item.id)
         if (original and original.user_id == u.id) or db.get(Exam, eid):
             continue
-        if len(item.question_ids) != len(set(item.question_ids)) or any(
-            q not in qs or qs[q]["status"] != "ready" for q in item.question_ids
-        ):
-            error("备份包含无效题目")
-        if item.finished < item.started or item.finished > now() + 60:
-            error("备份时间不合法")
         selected = [qs[q] for q in item.question_ids]
-        for q in selected:
-            validate_answer(q, item.answers.get(q["id"], []))
         e = Exam(
             id=eid,
             user_id=u.id,
@@ -687,6 +1160,7 @@ def import_data(body: ImportIn, u=Depends(viewer), db=Depends(transaction)):
             started=item.started,
             deadline=None,
             state=dict(
+                source_id=item.id,
                 questions=copy.deepcopy(selected),
                 answers={q["id"]: item.answers.get(q["id"], []) for q in selected},
                 flags=[],
@@ -697,6 +1171,8 @@ def import_data(body: ImportIn, u=Depends(viewer), db=Depends(transaction)):
         )
         db.add(e)
         db.flush()
+        for q in sorted(selected, key=lambda q: item.submitted_at.get(q["id"], item.finished)):
+            record(db, e, q, item.submitted_at.get(q["id"], item.finished))
         finish(db, e, item.finished)
         day = datetime.fromtimestamp(item.finished, ZoneInfo(u.timezone)).date().isoformat()
         activity = db.scalar(select(Activity).where(Activity.user_id == u.id, Activity.day == day))
@@ -705,10 +1181,82 @@ def import_data(body: ImportIn, u=Depends(viewer), db=Depends(transaction)):
         else:
             db.add(Activity(id=uid(), user_id=u.id, day=day, seconds=item.seconds))
         added += 1
-    for qid in body.mastered:
-        m = db.scalar(select(Mistake).where(Mistake.user_id == u.id, Mistake.question_id == qid))
-        if m:
-            m.mastered = 1
+    if body.schema_version == 1:
+        for qid in body.mastered:
+            m = db.scalar(select(Mistake).where(Mistake.user_id == u.id, Mistake.question_id == qid))
+            if m and qid not in local_schedules:
+                m.mastered = 1
+                m.due_at = None
+    else:
+        sources = recorded_wrong_sources(db, u.id)
+        for item in body.review:
+            m = db.scalar(
+                select(Mistake).where(Mistake.user_id == u.id, Mistake.question_id == item.question_id)
+            )
+            if m is None:
+                m = Mistake(
+                    id=uid(),
+                    user_id=u.id,
+                    question_id=item.question_id,
+                    count=0,
+                    updated=item.updated,
+                    imported_wrong_sources=[],
+                )
+                db.add(m)
+            # A backup can contain wrong answers submitted in an unfinished session.
+            # Preserve those sources without duplicating their count when that session is later imported.
+            missing = (set(item.wrong_sources) | set(m.imported_wrong_sources)) - sources[item.question_id]
+            m.imported_wrong_sources = sorted(missing)
+            m.count = len(sources[item.question_id]) + len(missing)
+            m.updated = max(m.updated, item.updated)
+            if (
+                item.question_id in local_schedules
+                and local_schedules[item.question_id] >= item.schedule_updated
+            ):
+                continue
+            m.mastered = int(item.mastered)
+            m.due_at = item.due_at
+            m.review_stage = item.review_stage
+            m.last_reviewed = item.last_reviewed
+            m.schedule_updated = item.schedule_updated
+        for item in body.personal:
+            current = db.scalar(
+                select(PersonalQuestion).where(
+                    PersonalQuestion.user_id == u.id, PersonalQuestion.question_id == item.question_id
+                )
+            )
+            if current and current.updated >= item.updated:
+                continue
+            if current is None:
+                current = PersonalQuestion(id=uid(), user_id=u.id, question_id=item.question_id, version=0)
+                db.add(current)
+            current.favorite = int(item.favorite)
+            current.note = item.note
+            current.updated = item.updated
+            current.version = max(current.version + 1, item.version)
+        for item in body.reports:
+            original = db.get(QuestionReport, item.id)
+            rid = uuid.uuid5(uuid.NAMESPACE_URL, u.id + ":report:" + item.id).hex
+            current = original if original and original.user_id == u.id else db.get(QuestionReport, rid)
+            if current:
+                if current.updated < item.updated and item.status == "withdrawn":
+                    current.status = item.status
+                    current.updated = item.updated
+                continue
+            db.add(
+                QuestionReport(
+                    id=rid,
+                    source_id=item.id,
+                    user_id=u.id,
+                    question_id=item.question_id,
+                    category=item.category,
+                    content=item.content,
+                    status=item.status,
+                    created=item.created,
+                    updated=item.updated,
+                )
+            )
+    db.flush()
     return {"imported": added, "skipped": len(body.sessions) - added}
 
 

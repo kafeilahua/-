@@ -28,6 +28,7 @@ import {
   Timer,
   Shuffle,
   BookmarkCheck,
+  NotebookPen,
   ChartNoAxesCombined,
   Settings2,
   ShieldCheck,
@@ -57,6 +58,9 @@ import {
 import { api, send, setCsrf } from "./api";
 import type { User, Bank, Stats, History, Session, Question } from "./types";
 import "./style.css";
+import QuestionTools from "./QuestionTools";
+const Library = lazy(() => import("./Library"));
+const ReviewHub = lazy(() => import("./ReviewHub"));
 const Chart = lazy(() => import("./Chart"));
 const AuthContext = createContext<{ user: User; logout: () => void }>(null!);
 const modes: Record<string, string> = {
@@ -64,6 +68,7 @@ const modes: Record<string, string> = {
   random: "随机练习",
   topic: "专项训练",
   wrong: "错题重练",
+  favorite: "收藏练习",
 };
 const typeNames: Record<string, string> = {
   single: "单选题",
@@ -299,6 +304,7 @@ function Shell() {
     ["/practice", "开始练习", BookOpen],
     ["/mistakes", "我的错题", BookmarkCheck],
     ["/history", "学习记录", ChartNoAxesCombined],
+    ["/library", "收藏与笔记", NotebookPen],
   ] as const;
   return (
     <div className="shell">
@@ -374,9 +380,11 @@ function Shell() {
                     ? "我的错题"
                     : location.pathname === "/history"
                       ? "学习记录"
-                      : location.pathname === "/settings"
-                        ? "数据与题库"
-                        : "学习概览"}
+                      : location.pathname === "/library"
+                        ? "收藏与笔记"
+                        : location.pathname === "/settings"
+                          ? "数据与题库"
+                          : "学习概览"}
             </b>
           </span>
           <div className="topbar-right">
@@ -397,7 +405,31 @@ function Shell() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/practice" element={<Practice />} />
             <Route path="/session/:id" element={<Study />} />
-            <Route path="/mistakes" element={<Mistakes />} />
+            <Route
+              path="/mistakes"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <ReviewHub
+                    owner={user.username}
+                    renderQuestionTools={(question) => (
+                      <QuestionTools
+                        key={question.id}
+                        questionId={question.id}
+                        owner={user.username}
+                      />
+                    )}
+                  />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/library"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <Library owner={user.username} />
+                </Suspense>
+              }
+            />
             <Route path="/history" element={<Records />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="*" element={<Dashboard />} />
@@ -1041,6 +1073,7 @@ function QuestionBody({
   );
 }
 function Study() {
+  const { user } = useContext(AuthContext);
   const { id } = useParams(),
     nav = useNavigate();
   const [s, setS] = useState<Session | null>(null),
@@ -1367,6 +1400,11 @@ function Study() {
                       ))}
                   </div>
                 ) : null}
+                <QuestionTools
+                  key={q.id}
+                  questionId={q.id}
+                  owner={user.username}
+                />
                 <div className="question-footer">
                   <span>PDF 第 {q.pages.join("、")} 页</span>
                   {!locked ? (
@@ -1711,188 +1749,6 @@ function Records() {
     </>
   );
 }
-function Mistakes() {
-  const nav = useNavigate();
-  type Item = {
-    id: string;
-    count: number;
-    mastered: boolean;
-    updated: number;
-    question: Question;
-  };
-  const [rows, setRows] = useState<Item[]>([]),
-    [error, setError] = useState(""),
-    [loading, setLoading] = useState(true),
-    [search, setSearch] = useState(""),
-    [tab, setTab] = useState("pending"),
-    [expanded, setExpanded] = useState(""),
-    [busy, setBusy] = useState(false);
-  const load = () =>
-    api<Item[]>("/mistakes")
-      .then(setRows)
-      .catch((e) => setError(e.message))
-      .finally(() => setLoading(false));
-  useEffect(() => {
-    load();
-  }, []);
-  const visible = rows.filter(
-    (r) =>
-      (tab === "all" || (tab === "mastered" ? r.mastered : !r.mastered)) &&
-      `${r.question.zh} ${r.question.en} ${r.question.tags.join(" ")}`
-        .toLowerCase()
-        .includes(search.toLowerCase()),
-  );
-  async function train() {
-    setBusy(true);
-    try {
-      const s = await send<Session>("/sessions", {
-        mode: "wrong",
-        count: Math.min(20, rows.filter((x) => !x.mastered).length),
-        feedback: true,
-      });
-      nav("/session/" + s.id);
-    } catch (e) {
-      setError((e as Error).message);
-    } finally {
-      setBusy(false);
-    }
-  }
-  async function toggle(row: Item) {
-    setBusy(true);
-    try {
-      await send("/mistakes/" + row.id, { mastered: !row.mastered }, "PATCH");
-      await load();
-    } catch (e) {
-      setError((e as Error).message);
-    } finally {
-      setBusy(false);
-    }
-  }
-  return (
-    <>
-      <div className="page-heading">
-        <div>
-          <div className="eyebrow">TURN MISTAKES INTO MASTERY</div>
-          <h1>每道错题，都是一个机会</h1>
-          <p>重新理解，再次练习，把盲点变成你的强项。</p>
-        </div>
-        <button
-          className="primary"
-          disabled={busy || !rows.some((x) => !x.mastered)}
-          onClick={train}
-        >
-          <RotateCcw size={16} />
-          重练未掌握题目
-        </button>
-      </div>
-      <ErrorBox message={error} />
-      <section className="panel">
-        <div className="list-toolbar">
-          <div className="tabs">
-            {[
-              ["pending", "待掌握"],
-              ["mastered", "已掌握"],
-              ["all", "全部"],
-            ].map(([v, l]) => (
-              <button
-                key={v}
-                className={tab === v ? "selected" : ""}
-                onClick={() => setTab(v)}
-              >
-                {l}{" "}
-                <small>
-                  {
-                    rows.filter(
-                      (r) =>
-                        v === "all" ||
-                        (v === "mastered" ? r.mastered : !r.mastered),
-                    ).length
-                  }
-                </small>
-              </button>
-            ))}
-          </div>
-          <label className="search">
-            <Search size={17} />
-            <input
-              placeholder="搜索题目或知识点"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </label>
-        </div>
-        {loading ? (
-          <Loading />
-        ) : visible.length ? (
-          visible.map((r) => (
-            <article className="mistake" key={r.id}>
-              <div className="mistake-top">
-                <span className="pill">{typeNames[r.question.type]}</span>
-                <span>
-                  Topic {r.question.topic} · 第 {r.question.number} 题
-                </span>
-                <span className="mistake-count">答错 {r.count} 次</span>
-              </div>
-              <button
-                className="mistake-title"
-                onClick={() => setExpanded(expanded === r.id ? "" : r.id)}
-              >
-                {r.question.zh || r.question.en}
-                <ChevronRight size={20} />
-              </button>
-              <div className="mistake-bottom">
-                <div>
-                  {r.question.tags.map((t) => (
-                    <span className="subtle-tag" key={t}>
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <button
-                  className="text-button"
-                  disabled={busy}
-                  onClick={() => toggle(r)}
-                >
-                  <BookmarkCheck size={16} />
-                  {r.mastered ? "移回待掌握" : "标记为已掌握"}
-                </button>
-              </div>
-              {expanded === r.id ? (
-                <div className="feedback right">
-                  <p>参考答案：{r.question.answer?.join("、")}</p>
-                  {r.question.options.map((o) => (
-                    <p key={o.id}>
-                      {o.id}. {o.zh || o.en}
-                    </p>
-                  ))}
-                  <p>
-                    {r.question.explanation_zh ||
-                      "原文未提供解析；完整附图请在学习记录中打开对应练习复盘。"}
-                  </p>
-                </div>
-              ) : null}
-            </article>
-          ))
-        ) : (
-          <div className="empty">
-            <BookmarkCheck size={40} />
-            <h3>
-              {search
-                ? "没有找到匹配题目"
-                : tab === "pending"
-                  ? "目前没有待掌握的错题"
-                  : "这里还没有题目"}
-            </h3>
-            <p>练习中的错误会自动收录，方便你随时复盘。</p>
-            <Link className="primary" to="/practice">
-              去练习 <ArrowRight size={16} />
-            </Link>
-          </div>
-        )}
-      </section>
-    </>
-  );
-}
 function Settings() {
   const { user } = useContext(AuthContext),
     [bank, setBank] = useState<Bank | null>(null),
@@ -1950,7 +1806,7 @@ function Settings() {
           </p>
           <p className="body-copy">
             记录存储在 Python 后端的 SQLite
-            数据库中。导出已完成的练习以留存备份；导入时自动跳过重复记录。
+            数据库中。导出已完成练习、复习计划、收藏、已保存笔记与反馈；导入时跳过重复记录，并保留较新的本地笔记。
           </p>
           <div className="backup-actions">
             <a className="primary" href="/api/v1/export" download>
