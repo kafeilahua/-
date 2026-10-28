@@ -195,7 +195,10 @@ def test_answer_images_protected_until_submission(client):
 
 def test_review_cannot_reveal_ready_question(client):
     assert client.get("/api/v1/bank/review/t1-q7").status_code == 404
-    q = next(q for q in bank()["questions"] if q["status"] == "review")
+    review = [q for q in bank()["questions"] if q["status"] == "review"]
+    if not review:
+        pytest.skip("题库已全部 ready，没有可核对的 review 题")
+    q = review[0]
     r = client.get("/api/v1/bank/review/" + q["id"])
     assert r.status_code == 200 and r.json()["issues"]
 

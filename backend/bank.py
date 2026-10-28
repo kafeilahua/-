@@ -10,7 +10,7 @@ def bank():
     if not path.exists():
         path = ROOT / "data/question-bank.json"
     return (
-        json.loads(path.read_text())
+        json.loads(path.read_text(encoding="utf-8"))
         if path.exists()
         else {"version": "empty", "questions": [], "page_count": 0}
     )
